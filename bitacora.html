@@ -113,6 +113,7 @@
         <li><strong>Definición de objetivos y alcance</strong> — Se estableció que la web debía ser 100% responsive con al menos tres breakpoints (400px, 900px, 1200px).</li>
         <li><strong>Decisión de diseño</strong> — Se eligió Bento Grid como layout principal por su versatilidad responsiva y estética contemporánea.</li>
         <li><strong>Estructura inicial</strong> — Se organizaron archivos en carpetas: css/, js/, img/, Integrantes/, bitacora.html e index.html en raíz.</li>
+        <li><strong>Assets gráficos</strong> — Imágenes de tapas y posters centralizadas en la carpeta <code>img/</code> según la consigna; el audio permanece junto a cada página de integrante.</li>
       </ul>
     </div>
 
@@ -124,7 +125,7 @@
         <li><strong>Paleta de colores</strong> — Se definió #e6e3dc (fondo beige claro), #ff2a2a (rojo acento), #1a1a1a (negro mate para cards de perfil), #0d0c0c (texto).</li>
         <li><strong>Tipografías</strong> — Se seleccionó Playfair Display para títulos (elegancia serif), Google Sans para cuerpo (legibilidad moderna).</li>
         <li><strong>Estructura HTML</strong> — Se creó index.html portada con grid de integrantes, bitacora.html para documentación, y 4 páginas individuales en /Integrantes.</li>
-        <li><strong>Decision de diseño</strong> — Se optó por avatares con emojis en lugar de fotos reales para proteger la privacidad de los integrantes, cumpliendo con el requerimiento del TP.</li>
+        <li><strong>Decisión de diseño</strong> — Perfiles con ilustración vectorial acorde a la consigna, sin uso de fotografía identificatoria.</li>
       </ul>
     </div>
 
@@ -147,16 +148,8 @@
       <ul>
         <li><strong>Efecto Blackout</strong> — Modo oscuro que activa: luna SVG grande, estrellas titilantes (cruces diminutas animadas), y oscurecimiento del fondo.</li>
         <li><strong>Botón flotante de luna</strong> — Ubicado abajo a la derecha, togglea el modo blackout y muestra mensaje de ayuda "El fuego ilumina..." por 3 segundos.</li>
-        <li><strong>Animaciones individuales</strong> — Cada integrante tiene una animación única:
-          <ul>
-            <li>Index: Luna estática + estrellas titilantes</li>
-            <li>Carlos: Avión volando de izquierda a derecha</li>
-            <li>Heber: OVNI flotando con luz verde pulsante</li>
-            <li>Javier: Perro caminando desde abajo</li>
-            <li>Leandro: Gato caminando desde abajo (espejo del perro)</li>
-          </ul>
-        </li>
-        <li><strong>Dificultad</strong> — Las animaciones del perro y gato quedaban "planas" (estáticas). Se rediseñaron para que caminen, se den vuelta y vuelvan a salir, dando más dinamismo.</li>
+        <li><strong>Animaciones por página</strong> — La portada y cada ficha de integrante incluyen un motivo SVG animado distinto para dar variedad visual manteniendo la misma base técnica.</li>
+        <li><strong>Dificultad</strong> — Algunas animaciones de personajes se veían estáticas; se iteró el movimiento (recorrido y vuelta) para ganar dinamismo sin sobrecargar el rendimiento.</li>
         <li><strong>View Transitions API</strong> — Implementación de navegación fluida entre páginas. Intercepta clicks en links internos y aplica transiciones suaves con fallback para navegadores no compatibles.</li>
       </ul>
     </div>
@@ -172,7 +165,7 @@
         <li><strong>Títulos jerárquicos</strong> — Tags estilo especialidad (Habilidades / Discos / Películas) con línea divisoria sutil, sin fondos de color llamativos ni emojis excesivos.</li>
         <li><strong>Grid de pósters para películas</strong> — Transformación a grid tipo tarjeta/póster con 3 columnas, mostrando imagen de portada arriba, icono de cine + nombre de película en negrita, y director/fecha abajo.</li>
         <li><strong>Eliminación de glassmorphism</strong> — Se quitó el degradado blanco de las cards porque interfería con el modo blackout.</li>
-        <li><strong>Simplificación de Perfiles</strong> — Eliminación de roles laborales (Backend/Frontend/Full Stack/UX). Ahora solo muestra: nombre, ubicación específica (ej: "Monte Grande, Buenos Aires"), y edad.</li>
+        <li><strong>Simplificación de perfiles</strong> — Se retiraron etiquetas de rol laboral; la tarjeta de perfil muestra solo los datos pedidos en la consigna (nombre, ubicación y edad).</li>
         <li><strong>Avatares SVG Elementales</strong> — Reemplazo de emojis por iconos SVG minimalistas representando elementos naturales con colores distintivos para cada integrante.</li>
         <li><strong>Iconografía Profesional</strong> — Reemplazo de emojis 🎵🎬📍🎂 por SVGs elegantes y consistentes en todas las páginas de integrantes.</li>
       </ul>
@@ -197,9 +190,9 @@
       <div class="fecha">Jueves 1 - Viernes 2 de Mayo de 2026</div>
       <p>Redacción completa del README.md y actualización de la bitácora con el proceso real de desarrollo. Preparación para deploy en Vercel.</p>
       <ul>
-        <li><strong>README.md</strong> — Documentación completa con: título, descripción, integrantes con links a GitHub, tecnologías, estructura de archivos, guía de estilos (paleta, tipografías, breakpoints), funciones JS detalladas, uso de IA, y link al deploy.</li>
-        <li><strong>Bitácora actualizada</strong> — Documentación del proceso de desarrollo completo.</li>
-        <li><strong>Preparación para deploy</strong> — Verificación de que todos los archivos estén en su lugar correcto según la estructura requerida.</li>
+        <li><strong>README.md</strong> — Documentación del proyecto: descripción, stack, estructura de carpetas, estilos, JavaScript, uso de herramientas de apoyo e hipervínculo al deploy.</li>
+        <li><strong>Bitácora</strong> — Actualización del registro del proceso de diseño e implementación.</li>
+        <li><strong>Preparación para deploy</strong> — Chequeo de rutas relativas y de que los recursos referenciados existan en el repositorio.</li>
         <li><strong>Alineación del Reproductor</strong> — Botón de play alineado verticalmente con el texto de la canción mediante <code>inline-flex</code>, <code>vertical-align: middle</code> y ajuste fino con <code>position: relative; top: -1px</code>.</li>
         <li><strong>Modo Blackout — UNKNOW en rojo</strong> — Ajuste del CSS para que en modo noche, el texto del hero sea blanco pero "UNKNOW" mantenga su color rojo de marca.</li>
         <li><strong>Modo Blackout en Integrantes</strong> — Corrección de colores en modo oscuro: nombres de integrantes en blanco (#fff), títulos de cards (Habilidades/Discos/Películas) en blanco, y habilidades con fondos de color acorde al avatar de cada integrante para mejor legibilidad y cohesión visual.</li>
@@ -207,25 +200,14 @@
     </div>
 
     <div class="timeline-item">
-      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 3 de Mayo — Revisión Final y Cierre</h2>
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 3 de Mayo — Revisión final y cierre</h2>
       <div class="fecha">Domingo, 3 de Mayo de 2026</div>
-      <p>Revisión final del proyecto, verificación contra requerimientos del TP y reflexión sobre el proceso de desarrollo.</p>
+      <p>Pasada final sobre el entregable: se contrastó el enunciado con lo implementado y se corrigieron detalles menores de maquetado y rutas.</p>
       <ul>
-        <li><strong>Checklist de requerimientos</strong> —
-          <ul>
-            <li>✅ Portada (index.html) con nombre del equipo, presentación y listado de integrantes</li>
-            <li>✅ Tarjetas individuales con: foto/avatar, nombre, ubicación, edad, habilidades (9), películas (3), música (3)</li>
-            <li>✅ Bitácora con descripción del proceso de desarrollo</li>
-            <li>✅ Responsive: breakpoints en 400px, 900px, 1200px</li>
-            <li>✅ JavaScript interactivo: modo blackout con persistencia sessionStorage, reproductor de música, View Transitions API para navegación fluida entre páginas</li>
-            <li>✅ README.md completo con todas las secciones requeridas</li>
-            <li>✅ Uso de IA documentado</li>
-            <li>✅ Estructura de archivos correcta (HTML raíz, CSS en /css, JS en /js, img en /img)</li>
-            <li>✅ Navegación con botones (sin depender del "Atrás" del navegador)</li>
-          </ul>
-        </li>
-        <li><strong>Uso de IA en el proyecto</strong> — Se utilizó Claude (Anthropic) como asistente de desarrollo para: generación de código CSS/JS, debugging, optimización de animaciones, y redacción de documentación.</li>
-        <li><strong>Reflexión final</strong> — El mayor aprendizaje fue cómo iterar rápidamente sobre diseños (como la sopa de letras que terminó en lista simple) y la importancia de mantener coherencia visual entre todas las cards. Se valoró también la importancia del testing en múltiples viewports para detectar problemas de responsive que no son evidentes en desarrollo local.</li>
+        <li><strong>Contraste con la consigna</strong> — Portada, fichas de integrantes, bitácora, hojas de estilo y script en las ubicaciones pedidas; imágenes bajo <code>img/</code>; navegación usable solo con enlaces y botones del sitio.</li>
+        <li><strong>Pruebas rápidas</strong> — Recorrido en distintos anchos (incluidos los breakpoints del TP), modo blackout y audio en fichas de música.</li>
+        <li><strong>Documentación</strong> — README y apartado de uso de herramientas de apoyo alineados con lo entregado.</li>
+        <li><strong>Reflexión final</strong> — Lo más útil fue iterar sobre el layout (descartar ideas que no encajaban) y probar en varios tamaños de pantalla antes del cierre: evita sorpresas en responsive y mantiene una sola línea visual en todo el sitio.</li>
       </ul>
     </div>
 

@@ -19,18 +19,22 @@ Sitio web para presentar al equipo y a cada integrante. Combina diseño minimali
 - 🧭 Navegación interna con **View Transitions API** (donde el navegador lo permite).
 - 👤 **Perfiles** por integrante con layout tipo bento.
 - 🏠 **Portada** con acceso a las cuatro fichas de integrantes.
-- ✨ **Efectos**: modo blackout (luna, estrellas, antorcha SVG), animaciones SVG por integrante (avión, OVNI, perro, gato) y efecto fuego en títulos.
+- ✨ **Efectos**: modo blackout (luna, estrellas, antorcha SVG), animaciones SVG distintas en portada e integrantes y efecto fuego en títulos.
 - 📱 **Responsive** con breakpoints en **400px**, **900px** y **1200px**.
-- 🎵 **Reproductor de música** en las páginas de integrantes (archivos locales en cada carpeta `canciones/`).
+- 🎵 **Reproductor de música** en las páginas de integrantes (MP3 locales en `Integrantes/<nombre>/canciones/`; tapas y posters en `img/` según la consigna).
 
 ---
 
 ## 👥 Integrantes
 
-- **Carlos Zárate**
-- **Heber Choque**
-- **Javier Navarro**
-- **Leandro Melchiori**
+| Integrante        | GitHub (perfil o repositorio del equipo) |
+|-------------------|------------------------------------------|
+| Carlos Zárate     | [zarateCarlos](https://github.com/zarateCarlos) |
+| Heber Choque      | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
+| Javier Navarro    | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
+| Leandro Melchiori | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
+
+Los enlaces al repositorio del equipo pueden reemplazarse por el perfil individual de cada persona cuando la cátedra lo solicite.
 
 ---
 
@@ -64,29 +68,30 @@ TP1-Unknow/
 │   └── style.css              # Estilos globales, responsive, blackout, animaciones
 ├── js/
 │   └── script.js              # Fuego, música, blackout, view transitions, rutas de nav
+├── img/                       # Imágenes raster (tapas de álbum, posters de películas)
+│   ├── carlos/canciones/ | carlos/peliculas/
+│   ├── heber/canciones/  | heber/peliculas/
+│   ├── javier/canciones/ | javier/peliculas/
+│   └── leandro/canciones/ | leandro/peliculas/
 └── Integrantes/
     ├── carlos/
     │   ├── carlos.html
-    │   ├── canciones/         # MP3 y tapas de álbum (.jpg)
-    │   └── peliculas/         # Posters / imágenes de películas
+    │   └── canciones/         # Solo MP3 (rutas en data-mp3 y fallback en script.js)
     ├── heber/
     │   ├── heber.html
-    │   ├── canciones/
-    │   └── peliculas/
+    │   └── canciones/
     ├── javier/
     │   ├── javier.html
-    │   ├── canciones/
-    │   └── peliculas/
+    │   └── canciones/
     └── leandro/
         ├── leandro.html
-        ├── canciones/
-        └── peliculas/
+        └── canciones/
 ```
 
 ### 📝 Notas
 
 - 🔗 Las páginas de integrantes enlazan a `../../css/style.css` y `../../js/script.js`.
-- 🖼️ Cada integrante mantiene sus **assets de audio e imagen** en su propia carpeta (`canciones/`, `peliculas/`).
+- 🖼️ Las **imágenes** (`.jpg` de música y cine) viven en `img/<integrante>/canciones/` y `img/<integrante>/peliculas/`; los **MP3** siguen en `Integrantes/<integrante>/canciones/`.
 
 ---
 
@@ -117,7 +122,7 @@ TP1-Unknow/
 
 ### 🖌️ Gráficos e iconografía
 
-- 🎨 **SVG en línea** para luna, estrellas, fuego, animaciones por integrante (avión, OVNI, perro, gato) y avatares tipo “Pokémon” en el perfil.
+- 🎨 **SVG en línea** para luna, estrellas, fuego, animaciones por página y avatares ilustrados en la tarjeta de perfil.
 - 📅 Iconos de timeline en la bitácora como SVG simples.
 - 🚫 **Sin** packs de iconos externos; las ilustraciones son vectoriales en el propio HTML/CSS.
 
@@ -132,19 +137,13 @@ TP1-Unknow/
 
 ---
 
-## ✅ Revisión final (checklist)
+## ✅ Cierre y revisión
 
-- ✅ Portada con nombre del equipo, texto de presentación y enlaces a los cuatro integrantes.
-- ✅ Cuatro páginas de integrante con datos requeridos por la consigna (perfil, habilidades, películas, música).
-- ✅ Bitácora con el proceso de desarrollo.
-- ✅ Responsive en 400px, 900px y 1200px.
-- ✅ JavaScript: blackout, animaciones, música, view transitions donde corresponda.
-- ✅ README actualizado y uso de IA documentado.
-- ✅ Navegación por enlaces y botones del sitio (sin depender del botón Atrás del navegador).
+Antes de entregar se revisó el enunciado frente al sitio: páginas obligatorias, carpetas (`css/`, `js/`, `img/`), contenido mínimo en cada ficha, bitácora, README y navegación interna sin depender del botón Atrás del navegador. También se probó el comportamiento en los anchos de trabajo del TP y las interacciones principales (modo noche y audio).
 
 ### 💭 Reflexión breve
 
-El trabajo priorizó una misma base visual (bento + tipografías) y un único `style.css` para mantener coherencia entre portada, bitácora e integrantes.
+Se priorizó una base visual única (bento y tipografías compartidas) y un solo `style.css` para que portada, bitácora e integrantes se sientan parte del mismo producto. El trabajo en equipo se apoyó en revisiones cortas y en probar en varios viewports para detectar desbordes o contrastes antes del cierre.
 
 ---
 
@@ -160,13 +159,13 @@ El trabajo priorizó una misma base visual (bento + tipografías) y un único `s
 - **CSS** — Layout bento, responsive, modo blackout, estilos de cards y rejillas de posters.
 - **JavaScript** — Lógica de `sessionStorage`, reproductor de música, interceptación de enlaces para view transitions, y **asistencia en el diseño y depuración de animaciones** (coordinación entre clases del `body` y tiempos de `keyframes`).
 - **HTML** — Semántica, atributos `aria-` donde aplica, comentarios de sección, estructura de carpetas por integrante.
-- **Animaciones** — Iteración sobre reglas `@keyframes` y animaciones SVG (avión, OVNI, perro, gato, estrellas, luna).
+- **Animaciones** — Iteración sobre reglas `@keyframes` y animaciones SVG en portada e integrantes (estrellas, luna, motivos por ficha).
 - **Documentación** — Borradores de README y de entradas de bitácora, revisión general de redacción.
 
 ### 🖼️ Imágenes y gráficos
 
 - **SVG** generados y refinados en el HTML con ayuda de la IA (formas, trazos, animaciones con `<animate>` o CSS).
-- **Imágenes raster** (tapas de disco y posters de película) son archivos locales del equipo; la IA no sustituye la elección curatorial de esos assets.
+- **Imágenes raster** (tapas de disco y posters de película) son archivos locales del equipo, versionados bajo `img/<integrante>/`; la IA no sustituye la elección curatorial de esos assets.
 
 ---
 
