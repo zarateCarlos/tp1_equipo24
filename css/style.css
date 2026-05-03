@@ -1,10 +1,10 @@
 /* ============================================
-   UNKNOW — Style Sheet
+   UNKNOW — Hoja de estilos
    Paleta: #e6e3dc (fondo), #ff2a2a (acento), #0d0c0c (texto), #ffffff (cards)
    Tipografías: Playfair Display (títulos), Google Sans (cuerpo)
    ============================================ */
 
-/* === RESET & BASE === */
+/* === Reset y base === */
 *,
 *::before,
 *::after {
@@ -21,21 +21,19 @@
   --white: #ffffff;
   --card-shadow: 0 4px 24px rgba(13, 12, 12, .10);
   --radius: 16px;
+  /* Espacio reservado bajo la isla del header (portada / bitácora) */
+  --page-header-reserve: 5.75rem;
 }
 
 html {
   overflow-x: hidden;
 }
 
-/* === View Transitions === */
-@view-transition {
-  navigation: auto;
-}
-
+/* === Transiciones entre páginas (solo raíz, cortas, sin escala fuerte) === */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 0.28s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 ::view-transition-old(root) {
@@ -46,19 +44,14 @@ html {
   animation-name: fade-in;
 }
 
-::view-transition-old(*),
-::view-transition-new(*) {
-  animation-duration: 0.7s;
-}
-
 @keyframes fade-out {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(0.98); }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: scale(1.02); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 body {
@@ -69,7 +62,37 @@ body {
   overflow-x: hidden;
 }
 
-/* === HEADER ROW === */
+/* Portada y bitácora: columna ~90vh útil y pie pegado abajo */
+body.page-stack {
+  min-height: 100dvh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.page-stack .page-column {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: min(90dvh, calc(100svh - var(--page-header-reserve)));
+  box-sizing: border-box;
+}
+
+body.page-stack .page-column > footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Hero portada: crece en la columna; sin min-height 100vh (pie al borde ~90vh útil) */
+body.page-stack .page-column > .hero:not(.interior) {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+}
+
+/* === Fila del encabezado fijo === */
 .header-row {
   position: fixed;
   top: 2rem;
@@ -83,7 +106,7 @@ body {
   max-width: 800px;
 }
 
-/* === HEADER / NAV === */
+/* === Encabezado y navegación === */
 header {
   display: flex;
   justify-content: space-between;
@@ -133,7 +156,7 @@ nav a:hover {
   color: var(--red);
 }
 
-/* === FIRE BUTTON === */
+/* === Botón efecto fuego === */
 .fire-btn {
   background: var(--dark);
   color: var(--white);
@@ -155,7 +178,7 @@ nav a:hover {
   background: var(--red);
 }
 
-/* === HERO (portada) === */
+/* === Cabecera principal / portada === */
 .hero {
   display: flex;
   flex-direction: column;
@@ -167,7 +190,7 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-/* Portada: ocupa al menos el alto útil de la ventana (header fijo + scroll natural) */
+/* Portada: alto mínimo útil (encabezado fijo + scroll natural) */
 .hero:not(.interior) {
   min-height: 100vh;
   min-height: 100dvh;
@@ -196,11 +219,11 @@ nav a:hover {
   color: var(--red);
 }
 
-/* === BENTO GRID — portada (integrantes, 2×2) === */
+/* === Bento grid portada: 4 columnas en escritorio; 2×2 en tablet/móvil (≤900px) === */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
   margin-top: 0.5rem;
 }
 
@@ -238,7 +261,7 @@ nav a:hover {
 
 .bento-card .member-name {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(0.72rem, 2.1vw, 0.88rem);
+  font-size: clamp(0.65rem, 1.15vw, 0.8rem);
   font-weight: 600;
   line-height: 1.2;
   color: var(--dark);
@@ -250,13 +273,13 @@ nav a:hover {
 }
 
 .bento-card .member-arrow {
-  order: -1; /* Move arrow to the left */
+  order: -1; /* Flecha a la izquierda */
   font-size: 0.95rem;
   flex-shrink: 0;
   color: var(--red);
 }
 
-/* === INTRO TEXT === */
+/* === Texto introductorio === */
 .intro-text {
   max-width: 680px;
   font-size: 1.05rem;
@@ -265,12 +288,12 @@ nav a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* Center align all text */
+/* Centrado de texto global */
 body, .hero, .bitacora-content, .timeline-item {
   text-align: center;
 }
 
-/* Style for integrantes title */
+/* Título sección integrantes */
 .integrantes-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
@@ -281,7 +304,7 @@ body, .hero, .bitacora-content, .timeline-item {
 }
 
 /* ============================================
-   HERO (bitácora / páginas interiores)
+   Cabecera interior (bitácora y páginas similares)
    ============================================ */
 section.hero.interior {
   padding: 2rem 2.5rem 1.5rem;
@@ -311,6 +334,27 @@ section.hero.interior .scroll-arrow {
   animation: bounceArrow 1.5s ease-in-out infinite;
 }
 
+/* Escritorio (≥901px): bajar el contenido principal +70px; más aire bajo la isla del header */
+@media (min-width: 901px) {
+  :root {
+    --page-header-reserve: 7.75rem;
+  }
+
+  .hero:not(.interior) {
+    padding-top: max(calc(5.5rem + 70px), calc(env(safe-area-inset-top, 0px) + 4.75rem + 70px));
+    padding-bottom: 1.5rem;
+  }
+
+  section.hero.interior {
+    padding-top: max(calc(5.5rem + 70px), calc(env(safe-area-inset-top, 0px) + 4.25rem + 70px));
+    padding-bottom: 1.5rem;
+  }
+
+  section.hero.interior .scroll-arrow {
+    margin-top: 1.5rem;
+  }
+}
+
 @keyframes bounceArrow {
   0%, 100% {
     transform: translateY(0);
@@ -323,7 +367,7 @@ section.hero.interior .scroll-arrow {
 }
 
 /* ============================================
-   BITÁCORA TIMELINE
+   Bitácora — línea de tiempo
    ============================================ */
 .bitacora-content {
   max-width: 860px;
@@ -384,7 +428,7 @@ section.hero.interior .scroll-arrow {
 }
 
 /* ============================================
-   INTEGRANTE — BENTO GRID CARDS
+   Integrante — tarjetas bento
    ============================================ */
 .integrante-wrapper {
   max-width: 1080px;
@@ -406,7 +450,7 @@ section.hero.interior .scroll-arrow {
   margin-top: 100px;
 }
 
-/* Card base */
+/* Tarjeta base */
 .i-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -429,7 +473,7 @@ section.hero.interior .scroll-arrow {
   margin-bottom: .2rem;
 }
 
-/* === Profile card (col 1–5) === */
+/* === Tarjeta perfil (columnas 1–5) === */
 .i-profile {
   grid-column: span 5;
   background: #1a1a1a;
@@ -458,7 +502,7 @@ section.hero.interior .scroll-arrow {
   line-height: 1;
 }
 
-/* Pokemon Type Avatar SVGs */
+/* Avatares SVG por tipo Pokémon */
 .avatar svg {
   width: 60%;
   height: 60%;
@@ -575,7 +619,7 @@ section.hero.interior .scroll-arrow {
   text-align: center;
 }
 
-/* === Habilidades (full width) === */
+/* === Habilidades (ancho completo en grid) === */
 .i-skills {
   grid-column: span 6;
 }
@@ -617,7 +661,7 @@ section.hero.interior .scroll-arrow {
   font-weight: 700;
 }
 
-/* Letter soup color variations */
+/* Variaciones de color en la sopa de letras */
 .skill-letter.color-1 { color: #ff2a2a; }
 .skill-letter.color-2 { color: #ff8c00; }
 .skill-letter.color-3 { color: #ffd700; }
@@ -694,12 +738,14 @@ section.hero.interior .scroll-arrow {
   flex-shrink: 0;
 }
 
-/* === MOVIES POSTER GRID === */
+/* === Rejilla de posters de películas === */
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.6rem;
   margin-top: 0.8rem;
+  /* Evita que cada fila iguale la altura al poster más alto: sin esto, flex:1 en la imagen recorta tapas/posters */
+  align-items: start;
 }
 
 .movie-poster {
@@ -713,6 +759,9 @@ section.hero.interior .scroll-arrow {
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   padding: 0.4rem 0.1rem;
+  min-width: 0;
+  align-self: start;
+  width: 100%;
 }
 
 .movie-poster:hover {
@@ -726,11 +775,15 @@ section.hero.interior .scroll-arrow {
 
 .movie-poster .movie-image {
   width: 100%;
-  flex: 1;
-  min-height: 120px;
+  max-width: 100%;
+  flex: 0 0 auto;
+  min-height: 0;
+  aspect-ratio: 2 / 3;
+  height: auto;
   object-fit: cover;
+  object-position: center;
   display: block;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   padding: 0;
 }
@@ -747,12 +800,16 @@ section.hero.interior .scroll-arrow {
   line-height: 1.2;
 }
 
-/* Álbumes (música): tapas como posters */
+/* Álbumes (música): tapas cuadradas en todos los breakpoints */
 .i-skills .movie-poster.music-poster img.movie-image {
   width: 100%;
-  flex: 1;
-  min-height: 120px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  min-height: 0;
+  flex: 0 0 auto;
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
   padding: 0;
   display: block;
@@ -760,9 +817,13 @@ section.hero.interior .scroll-arrow {
 
 .i-skills .movie-poster.music-poster .movie-image.music-cover {
   width: 100%;
-  flex: 1;
-  min-height: 120px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  min-height: 0;
+  flex: 0 0 auto;
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
   padding: 0;
   border: none;
@@ -855,7 +916,7 @@ body.blackout-active .i-skills .music-tagline {
   color: #ccc;
 }
 
-/* SVG Icon styling for professional look */
+/* Iconos SVG en línea */
 .icon-svg {
   width: 1em;
   height: 1em;
@@ -871,7 +932,7 @@ body.blackout-active .i-skills .music-tagline {
   fill: currentColor;
 }
 
-/* Timeline icon in bitacora */
+/* Icono de línea de tiempo en bitácora */
 .timeline-icon {
   width: 1.2em;
   height: 1.2em;
@@ -963,7 +1024,7 @@ body.blackout-active .i-skills .music-tagline {
   background: var(--red);
 }
 
-/* === Blackout card === */
+/* === Tarjeta blackout === */
 .i-blackout {
   grid-column: span 12;
 }
@@ -986,7 +1047,7 @@ body.blackout-active .i-skills .music-tagline {
   min-width: 180px;
 }
 
-/* === Back island (floating glass button) === */
+/* === Botón flotante “Volver” (cristal) === */
 .back-island {
   display: inline-flex;
   align-items: center;
@@ -1021,7 +1082,7 @@ body.blackout-active .i-skills .music-tagline {
   color: var(--red);
 }
 
-/* === Fire effect === */
+/* === Efecto fuego en títulos === */
 .fire-active h1,
 .fire-active h2,
 .fire-active .member-full-name {
@@ -1043,7 +1104,7 @@ body.blackout-active .i-skills .music-tagline {
   }
 }
 
-/* === Fire SVG Animation from Bottom === */
+/* === SVG de fuego animado desde abajo === */
 .fire-svg {
   position: fixed;
   bottom: 0;
@@ -1079,14 +1140,14 @@ body.blackout-active .i-skills .music-tagline {
   }
 }
 
-/* === BLACKOUT effect - Se cortó la luz === */
+/* === Efecto blackout (“Se cortó la luz”) === */
 body.blackout-active {
   background: #0a0a0a;
   color: #888;
   transition: all .8s ease;
 }
 
-/* Torch lighting effect - radial gradient from center */
+/* Antorcha: gradiente radial desde el centro */
 body.blackout-active::before {
   content: '';
   position: fixed;
@@ -1108,7 +1169,7 @@ body.blackout-active.torch-lit::before {
   opacity: 1;
 }
 
-/* Moon that appears in blackout */
+/* Luna visible en modo blackout */
 .moon-svg {
   position: fixed;
   top: 10%;
@@ -1127,7 +1188,7 @@ body.blackout-active .moon-svg {
   transform: translateY(0);
 }
 
-/* Stars */
+/* Estrellas de fondo */
 .stars {
   position: fixed;
   top: 0;
@@ -1175,7 +1236,7 @@ body.blackout-active .skills-list li {
   color: #000;
 }
 
-/* Skills colored by Pokemon type in blackout mode */
+/* Habilidades por tipo Pokémon en blackout */
 body.blackout-active .skills-fire li {
   background: #ff6b35;
   color: #fff;
@@ -1196,7 +1257,7 @@ body.blackout-active .skills-grass li {
   color: #fff;
 }
 
-/* Skills bento in blackout mode */
+/* Bento de habilidades en blackout */
 body.blackout-active .skills-bento .skill-box {
   background: rgba(30, 30, 30, 0.8);
   border-color: rgba(255, 140, 0, 0.3);
@@ -1208,7 +1269,7 @@ body.blackout-active .skills-bento .skill-box:hover {
   box-shadow: 0 4px 15px rgba(255, 100, 0, 0.2);
 }
 
-/* Colored skill boxes by type in blackout mode */
+/* Cajas de habilidad por tipo en blackout */
 body.blackout-active .skills-fire .skill-box {
   background: rgba(255, 107, 53, 0.3);
   border-color: rgba(255, 107, 53, 0.5);
@@ -1249,7 +1310,7 @@ body.blackout-active .back-island {
   color: #aaa;
 }
 
-/* Torch fire animation */
+/* Animación de la antorcha (fuego) */
 body.blackout-active .fire-svg svg {
   animation: torchFlicker 0.3s ease-in-out infinite alternate;
   filter: drop-shadow(0 0 40px rgba(255, 140, 0, 0.8)) 
@@ -1269,7 +1330,7 @@ body.blackout-active .fire-svg svg {
   }
 }
 
-/* Blackout button styles */
+/* Estilos del botón blackout */
 .blackout-btn {
   background: #1a1a1a;
   color: #aaa;
@@ -1296,7 +1357,7 @@ body.blackout-active .blackout-inner {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Blackout message */
+/* Mensaje en tarjeta blackout */
 .blackout-message {
   margin-top: 1rem;
   font-size: 0.85rem;
@@ -1311,14 +1372,14 @@ body.blackout-active .blackout-message {
   color: #aaa;
 }
 
-/* Movie and music text colors in blackout mode - BLACK so they stand out */
+/* Listas película/música en blackout: texto oscuro para contraste */
 body.blackout-active .movie-list li,
 body.blackout-active .movie-list .music-content,
 body.blackout-active .movie-list strong {
   color: #000 !important;
 }
 
-/* Index page hero title in blackout mode - WHITE, UNKNOW stays RED */
+/* Portada: título principal en blanco; “UNKNOW” sigue en rojo */
 body.blackout-active .hero h1 {
   color: #fff !important;
 }
@@ -1339,7 +1400,7 @@ body.blackout-active .movie-list .movie-icon {
   color: #ff8c00;
 }
 
-/* Movie posters in blackout mode */
+/* Posters de películas en blackout */
 body.blackout-active .movie-poster {
   background: rgba(30, 30, 30, 0.8);
   border-color: rgba(255, 140, 0, 0.3);
@@ -1354,7 +1415,7 @@ body.blackout-active .movie-poster:hover {
   box-shadow: 0 4px 12px rgba(255, 100, 0, 0.15);
 }
 
-/* Moon button floating fixed at bottom right */
+/* Botón luna fijo abajo a la derecha */
 .moon-btn-fixed {
   position: fixed;
   bottom: 2rem;
@@ -1384,7 +1445,7 @@ body.blackout-active .movie-poster:hover {
   height: 28px;
 }
 
-/* Moon hint message */
+/* Mensaje de ayuda junto a la luna */
 .moon-hint {
   position: fixed;
   bottom: 2rem;
@@ -1408,7 +1469,7 @@ body.blackout-active .movie-poster:hover {
   transform: translateX(0);
 }
 
-/* Stars - much smaller crosses like sparkles */
+/* Estrellas: cruces pequeñas tipo destellos */
 .stars svg {
   width: 100%;
   height: 100%;
@@ -1418,13 +1479,13 @@ body.blackout-active .movie-poster:hover {
   transform-origin: center;
 }
 
-/* Moon slightly bigger */
+/* Luna un poco más grande */
 .moon-svg {
   width: 100px;
   height: 100px;
 }
 
-/* ============ CARD TITLES - GLASSMORPHISM ============ */
+/* ============ Etiquetas de tarjeta ============ */
 .i-card .card-tag {
   display: block;
   font-size: 0.7rem;
@@ -1441,7 +1502,7 @@ body.blackout-active .movie-poster:hover {
   position: relative;
 }
 
-/* Skills list styled like movie-list - clean */
+/* Lista de habilidades estilo lista de películas */
 .i-bio .skills-list {
   list-style: none;
   margin-top: 0.4rem;
@@ -1458,7 +1519,7 @@ body.blackout-active .movie-poster:hover {
   min-height: 40px;
 }
 
-/* === SKILLS BENTO GRID === */
+/* === Rejilla bento de habilidades === */
 .skills-bento {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1631,7 +1692,7 @@ body.blackout-active .cat-svg {
 }
 
 /* ============================================
-   RESPONSIVE
+   Diseño responsive
    ============================================ */
 @media (max-width: 1200px) {
   .integrante-bento {
@@ -1653,6 +1714,15 @@ body.blackout-active .cat-svg {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --page-header-reserve: 5.35rem;
+  }
+
+  /* Portada: integrantes en 2 columnas (tablet y móvil) */
+  .bento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .header-row {
     width: 95%;
     top: 1rem;
@@ -1690,29 +1760,29 @@ body.blackout-active .cat-svg {
   }
 
   .hero:not(.interior) {
-    padding-top: max(4.75rem, calc(env(safe-area-inset-top, 0px) + 4rem));
+    padding-top: max(calc(4.75rem - 10px), calc(env(safe-area-inset-top, 0px) + 4rem - 10px));
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 1.25rem;
-    min-height: 100dvh;
-    min-height: 100svh;
+    padding-bottom: calc(1.25rem - 10px);
+    /* Sin altura mínima de viewport: el bloque mide solo su contenido y el footer entra en pantalla */
+    min-height: 0;
   }
 
   .hero:not(.interior) h1 {
     font-size: clamp(1.35rem, 5.5vw, 2.35rem);
-    margin-bottom: 0.65rem;
+    margin-bottom: calc(0.65rem - 5px);
     padding: 0.2rem 0;
   }
 
   .hero:not(.interior) .intro-text {
     font-size: 0.92rem;
     line-height: 1.55;
-    margin-bottom: 0.75rem;
+    margin-bottom: calc(0.75rem - 5px);
   }
 
   .hero:not(.interior) .integrantes-title {
     font-size: 1.2rem;
-    margin: 0.6rem 0 0.45rem;
+    margin: calc(0.6rem - 5px) 0 calc(0.45rem - 5px);
   }
 
   .hero:not(.interior) .bento-grid {
@@ -1730,20 +1800,35 @@ body.blackout-active .cat-svg {
   }
 
   section.hero.interior {
-    padding: 1.25rem 1rem 1rem;
-    padding-top: max(4.75rem, calc(env(safe-area-inset-top, 0px) + 3.5rem));
+    padding: calc(1.25rem - 10px) 1rem calc(1rem - 10px);
+    padding-top: max(calc(4.75rem - 10px), calc(env(safe-area-inset-top, 0px) + 3.5rem - 10px));
   }
 
   section.hero.interior h1 {
     font-size: clamp(1.35rem, 5vw, 2rem);
+    margin-bottom: calc(0.6rem - 5px);
   }
 
   section.hero.interior p {
     font-size: 0.92rem;
+    margin-bottom: calc(0.5rem - 5px);
+  }
+
+  section.hero.interior .scroll-arrow {
+    margin-top: calc(1.5rem - 15px);
+  }
+
+  /* Index y bitácora: bajar 100px el bloque de título (aprovecha aire bajo el header; no cambia el alto del viewport) */
+  body.page-stack .page-column > .hero:not(.interior) {
+    padding-top: max(calc(4.75rem - 10px + 100px), calc(env(safe-area-inset-top, 0px) + 4rem - 10px + 100px));
+  }
+
+  body.page-stack .page-column > section.hero.interior {
+    padding-top: max(calc(4.75rem - 10px + 100px), calc(env(safe-area-inset-top, 0px) + 3.5rem - 10px + 100px));
   }
 
   .bitacora-content {
-    padding: 0 1.2rem 3rem;
+    padding: 0 1.2rem calc(3rem - 10px);
     gap: 1rem;
   }
 
@@ -1789,7 +1874,7 @@ body.blackout-active .cat-svg {
     margin-top: 0.2rem;
   }
   
-  /* Integrante mobile */
+  /* Integrante en pantallas pequeñas */
   .i-profile {
     padding: 1.5rem 1rem;
   }
@@ -1847,11 +1932,6 @@ body.blackout-active .cat-svg {
     height: 120px;
   }
 
-  .bento-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.55rem;
-  }
-
   .hero:not(.interior) .bento-card {
     padding: 0.45rem 0.45rem;
     border-radius: 22px;
@@ -1899,7 +1979,7 @@ body.blackout-active .cat-svg {
   }
 
   .bitacora-content {
-    padding-bottom: 2.5rem;
+    padding-bottom: calc(2.5rem - 10px);
   }
 
   .timeline-item {
@@ -1907,7 +1987,7 @@ body.blackout-active .cat-svg {
   }
 }
 
-/* === FOOTER === */
+/* === Pie de página === */
 footer {
   text-align: center;
   padding: 0.5rem 1rem; /* Padding reducido a la mitad */
@@ -1921,26 +2001,26 @@ body.blackout-active footer {
   color: #888;
 }
 
-/* === ADJUST INDEX CONTENT FOR PERFECT FIT === */
+/* === Ajustes de la portada === */
 .intro-text {
   margin-bottom: 0.85rem;
 }
 
-/* === HIDE SCROLLBARS FOR SMOOTH NAVIGATION === */
+/* === Barras de desplazamiento (evitar saltos de maquetación) === */
 html {
-  overflow-y: scroll; /* Force scrollbar to prevent layout shifts */
+  overflow-y: scroll; /* Fuerza barra vertical para estabilizar el ancho */
 }
 
 body {
   overflow-x: hidden;
 }
 
-/* Hide scrollbar but keep functionality */
+/* Ocultar barra visual; el scroll sigue activo */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
 body {
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; /* Firefox: sin barra fina */
 }

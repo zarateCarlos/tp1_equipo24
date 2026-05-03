@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -10,9 +10,9 @@
   <title>Javier Navarro — UNKNOW</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23ff2a2a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='14' font-family='system-ui,sans-serif' font-weight='800'%3EU%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 </head>
-<body style="view-transition-name: javier">
+<body>
 
-  <!-- Moon for blackout mode -->
+  <!-- Luna: modo blackout -->
   <div class="moon-svg">
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -30,10 +30,10 @@
     </svg>
   </div>
 
-  <!-- Stars for blackout mode - tiny sparkles -->
+  <!-- Estrellas: destellos pequeños -->
   <div class="stars">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <!-- Tiny cross sparkles (10x smaller) -->
+      <!-- Cruces diminutas tipo destello -->
       <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/><path d="M20 30h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
       <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3s" repeatCount="indefinite"/><path d="M50 15h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
       <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.5s" repeatCount="indefinite"/><path d="M80 40h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
@@ -44,7 +44,7 @@
       <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.3s" repeatCount="indefinite"/><path d="M70 70h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
       <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="3.8s" repeatCount="indefinite"/><path d="M140 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
       <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.6s" repeatCount="indefinite"/><path d="M170 100h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
-      <!-- Extra tiny sparkles -->
+      <!-- Destellos extra pequeños -->
       <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.2s" repeatCount="indefinite"/><path d="M45 45h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
       <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M95 25h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
       <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.7s" repeatCount="indefinite"/><path d="M145 35h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
@@ -53,7 +53,7 @@
     </svg>
   </div>
 
-  <!-- Dog SVG for Javier -->
+  <!-- SVG perro (Javier) -->
   <div class="dog-svg">
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <!-- Cuerpo -->
@@ -125,7 +125,7 @@
         <span class="card-tag music-tag">Álbumes favoritos</span>
         <div class="movies-grid music-posters">
           <article class="movie-poster music-poster" data-mp3="./canciones/Ratones Paranoicos - Vicio.mp3">
-            <img src="./canciones/fieras_lunaticas.jpg" alt="Fieras lunáticas — Ratones Paranoicos" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <img src="./canciones/fieras_lunaticas.jpg" alt="Fieras lunáticas — Ratones Paranoicos" class="movie-image" loading="lazy" decoding="async" width="200" height="200">
             <div class="movie-info music-poster-foot">
               <div class="music-content">
                 <div class="movie-title">Fieras lunáticas</div>
@@ -135,7 +135,7 @@
             </div>
           </article>
           <article class="movie-poster music-poster" data-mp3="./canciones/Scorpions - Wind Of Change.mp3">
-            <img src="./canciones/crazy_world.jpg" alt="Crazy World — Scorpions" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <img src="./canciones/crazy_world.jpg" alt="Crazy World — Scorpions" class="movie-image" loading="lazy" decoding="async" width="200" height="200">
             <div class="movie-info music-poster-foot">
               <div class="music-content">
                 <div class="movie-title">Crazy World</div>
@@ -145,7 +145,7 @@
             </div>
           </article>
           <article class="movie-poster music-poster" data-mp3="./canciones/The Beatles - Help.mp3">
-            <img src="./canciones/help.jpg" alt="Help! — The Beatles" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <img src="./canciones/help.jpg" alt="Help! — The Beatles" class="movie-image" loading="lazy" decoding="async" width="200" height="200">
             <div class="movie-info music-poster-foot">
               <div class="music-content">
                 <div class="movie-title">Help!</div>
@@ -163,19 +163,19 @@
         <span class="card-tag movies-tag">Películas favoritas</span>
         <div class="movies-grid">
           <div class="movie-poster">
-            <img src="./peliculas/batman.jpg" alt="Batman" class="movie-image">
+            <img src="./peliculas/batman.jpg" alt="Batman" class="movie-image" loading="lazy" decoding="async" width="200" height="300">
             <div class="movie-info">
               <div class="movie-title">Batman</div>
             </div>
           </div>
           <div class="movie-poster">
-            <img src="./peliculas/bohemia.jpg" alt="Bohemian Rhapsody" class="movie-image">
+            <img src="./peliculas/bohemia.jpg" alt="Bohemian Rhapsody" class="movie-image" loading="lazy" decoding="async" width="200" height="300">
             <div class="movie-info">
               <div class="movie-title">Bohemian Rhapsody</div>
             </div>
           </div>
           <div class="movie-poster">
-            <img src="./peliculas/war.jpg" alt="War" class="movie-image">
+            <img src="./peliculas/war.jpg" alt="War" class="movie-image" loading="lazy" decoding="async" width="200" height="300">
             <div class="movie-info">
               <div class="movie-title">War</div>
             </div>
@@ -184,8 +184,8 @@
       </div>
 
     </div>
-    </div><!-- /grid-container -->
-  </div><!-- /wrapper -->
+    </div><!-- /contenedor-rejilla -->
+  </div><!-- /envoltorio -->
 
   <footer>
     <p>© 2026 - Un desarrollo hecho por el equipo UNKNOW</p>

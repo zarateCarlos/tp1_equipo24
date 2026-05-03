@@ -1,9 +1,9 @@
 /* ============================================
    UNKNOW — script.js
-   Funcionalidades:
-   1. Efecto de Fuego Toggle (portada + páginas individuales)
-   2. Reproductor de Música (páginas individuales)
-   3. Efecto Blackout "Se cortó la luz" Toggle (páginas individuales)
+   Funciones:
+   1. Efecto fuego (portada e integrantes)
+   2. Reproductor de música (integrantes)
+   3. Blackout “Se cortó la luz” (integrantes)
    4. Persistencia con sessionStorage
    ============================================ */
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('header nav a[href*="bitacora"]').forEach(a =>
         a.setAttribute('href', bitacoraUrl)
       );
-    } catch (_) { /* noop */ }
+    } catch (_) { /* sin operación */ }
   }
 
   applyCanonicalNavLinks();
@@ -169,14 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyBlackout(active) {
     document.body.classList.toggle('blackout-active', active);
-    // Add torch lighting effect when both fire and blackout are active
+    // Efecto antorcha si están activos fuego y blackout a la vez
     if (active && document.body.classList.contains('fire-active')) {
       document.body.classList.add('torch-lit');
     } else {
       document.body.classList.remove('torch-lit');
     }
     if (blackoutBtn) {
-      // Only change text for index/bitacora pages, not integrante pages
+      // Solo cambia el texto en portada/bitácora, no en páginas de integrantes
       const currentPath = window.location.pathname;
       const isIntegrantePage = currentPath.includes('/heber/') || 
                                currentPath.includes('/carlos/') || 
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Sync torch lighting when fire is toggled
+  // Sincroniza la antorcha al alternar el fuego
   const originalApplyFire = applyFire;
   window.addEventListener('fireToggled', () => {
     if (document.body.classList.contains('blackout-active')) {
@@ -209,18 +209,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ─── 4. MOON BUTTON (Floating hint) ─── */
+  /* ─── 4. Botón luna (atajo flotante) ─── */
   const moonBtn = document.getElementById('moonBtn');
   const moonHint = document.getElementById('moonHint');
   
   if (moonBtn) {
-    // Moon button toggles blackout mode
+    // La luna alterna el modo blackout
     moonBtn.addEventListener('click', () => {
       const next = !document.body.classList.contains('blackout-active');
       sessionStorage.setItem(BLACKOUT_KEY, next);
       applyBlackout(next);
       
-      // Show hint message
+      // Muestra el mensaje de ayuda brevemente
       if (moonHint) {
         moonHint.classList.add('show');
         setTimeout(() => {
@@ -230,17 +230,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ─── 5. VIEW TRANSITIONS (un solo manejador; evita doble transición y AbortError ruidoso) ─── */
+  /* ─── 5. View Transitions: navegación interna (sin Ctrl/Mayús; respeta “reducir movimiento”) ─── */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('a[href]').forEach(link => {
     link.addEventListener('click', e => {
+      if (e.defaultPrevented) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') ||
           href.startsWith('http://') || href.startsWith('https://')) return;
-      if (!document.startViewTransition) return;
+      if (!document.startViewTransition || prefersReducedMotion.matches) return;
 
       e.preventDefault();
       const vt = document.startViewTransition(() => {
-        window.location.assign(href);
+        window.location.href = href;
       });
       if (vt && typeof vt.finished?.catch === 'function') {
         vt.finished.catch(() => { /* navegación canceló la transición: normal */ });
