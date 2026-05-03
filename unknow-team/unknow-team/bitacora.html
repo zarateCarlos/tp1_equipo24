@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Bitácora — UNKNOW</title>
+</head>
+<body>
+
+  <header>
+    <span>UNKNOW</span>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="bitacora.html">Bitácora</a>
+      <button id="fireEffect" class="fire-btn">🔥 Fuego</button>
+    </nav>
+  </header>
+
+  <section class="hero interior">
+    <h1>Bitácora del Proyecto</h1>
+    <p>Documentación del proceso de desarrollo, decisiones de diseño y dificultades encontradas durante la creación del sitio web de UNKNOW.</p>
+  </section>
+
+  <section class="bitacora-content">
+
+    <div class="timeline-item">
+      <h2>📅 17 de Abril — Inicio del Proyecto</h2>
+      <div class="fecha">Jueves, 17 de Abril de 2025</div>
+      <p>Reunión inicial del equipo para definir los objetivos fundamentales del proyecto UNKNOW. Decidimos orientar el diseño hacia una estética editorial inspirada en revistas de moda combinada con tecnología web contemporánea.</p>
+      <ul>
+        <li><strong>Reunión inicial del equipo</strong> — Presentación de todos los integrantes y definición de roles.</li>
+        <li><strong>Definición de objetivos y alcance</strong> — Establecimos que la web debía ser 100% responsive con al menos tres breakpoints.</li>
+        <li><strong>Asignación de roles y responsabilidades</strong> — Carlos (backend/estructura), Heber (frontend/CSS), Javier (JS/interactividad), Leandro (diseño/UX).</li>
+        <li><strong>Decisión de diseño</strong> — Elegimos Bento Grid como layout principal por su versatilidad responsiva.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>🎨 18 de Abril — Diseño UI/UX</h2>
+      <div class="fecha">Viernes, 18 de Abril de 2025</div>
+      <p>Sesión de diseño creativo enfocada en la identidad visual del equipo. La mayor dificultad fue ponernos de acuerdo en la paleta de colores; terminamos resolviendo con una votación interna.</p>
+      <ul>
+        <li><strong>Creación de moodboards</strong> — Buscamos referencias en Dribbble, Awwwards y revistas como i-D y Vogue.</li>
+        <li><strong>Diseño de wireframes en Figma</strong> — Bocetamos la estructura de la portada y las tarjetas individuales.</li>
+        <li><strong>Selección de paleta de colores</strong> — Definimos #e6e3dc (fondo beige), #ff2a2a (rojo), #0d0c0c (texto).</li>
+        <li><strong>Tipografías</strong> — Playfair Display para títulos (elegancia serif), Google Sans para cuerpo (legibilidad).</li>
+        <li><strong>Dificultad</strong> — Varios integrantes preferían un fondo oscuro; lo resolvimos implementando el efecto Morfosis como modo oscuro togglable.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>💻 21 de Abril — Estructura HTML</h2>
+      <div class="fecha">Lunes, 21 de Abril de 2025</div>
+      <p>Implementación de la estructura semántica base del sitio. Definimos la organización de archivos aplicando buenas prácticas: HTML en raíz, CSS en /css, JS en /js, imágenes en /img, páginas individuales en /Integrantes.</p>
+      <ul>
+        <li><strong>HTML semántico</strong> — Uso de header, nav, section, footer y atributos ARIA para accesibilidad.</li>
+        <li><strong>Organización de archivos</strong> — Estructuramos el repositorio según los requerimientos del TP.</li>
+        <li><strong>Template de tarjetas</strong> — Creamos un template base para las páginas de cada integrante.</li>
+        <li><strong>Dificultad</strong> — La navegación entre páginas con View Transitions API requería que los links usaran view-transition-name; tuvimos que reorganizar varios IDs que colisionaban.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>🎨 22 de Abril — CSS y Responsive Design</h2>
+      <div class="fecha">Martes, 22 de Abril de 2025</div>
+      <p>Jornada intensa de CSS. Implementamos el sistema de Bento Grid para la portada y las tarjetas individuales, asegurándonos de que todo funcionara correctamente en los tres breakpoints requeridos.</p>
+      <ul>
+        <li><strong>Bento Grid</strong> — Implementación con CSS Grid usando grid-template-columns y grid-column: span.</li>
+        <li><strong>Breakpoints</strong> — Media queries para ≤400px (mobile), ≤900px (tablet), ≤1200px (desktop grande).</li>
+        <li><strong>Glassmorphism del header</strong> — backdrop-filter + position: sticky para la navegación pegajosa.</li>
+        <li><strong>Dificultad</strong> — El Bento Grid colapsaba mal en móviles pequeños. Lo solucionamos usando !important solo en el breakpoint de 400px para forzar grid-column: span 1 en todas las cards.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>⚡ 24 de Abril — Funcionalidades JavaScript</h2>
+      <div class="fecha">Jueves, 24 de Abril de 2025</div>
+      <p>Desarrollo de interactividad y efectos visuales. Implementamos las tres funciones JS principales: efecto fuego, reproductor de música y efecto morfosis, con persistencia usando sessionStorage.</p>
+      <ul>
+        <li><strong>Efecto de Fuego Toggle</strong> — Aplica gradiente animado sobre títulos h1/h2 con CSS @keyframes. Activable desde el botón del navbar.</li>
+        <li><strong>Reproductor de Música</strong> — Play/Pause real usando la API Audio de JavaScript con control de estado entre canciones.</li>
+        <li><strong>Efecto Morfosis</strong> — Cambia el tema de la página a modo oscuro usando classList.toggle y persiste con sessionStorage.</li>
+        <li><strong>Dificultad</strong> — La View Transitions API no está disponible en todos los navegadores. Implementamos un polyfill suave que navega normalmente si no está disponible.</li>
+        <li><strong>Cambio importante</strong> — Decidimos almacenar el estado del fuego y morfosis en sessionStorage para que persistan al navegar entre páginas sin usar localStorage global.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>📱 25 de Abril — Testing y Ajustes</h2>
+      <div class="fecha">Viernes, 25 de Abril de 2025</div>
+      <p>Jornada de testing en múltiples dispositivos y navegadores. Encontramos y corregimos varios problemas de layout y comportamiento de los scripts.</p>
+      <ul>
+        <li><strong>Testing en Firefox</strong> — View Transitions no disponible, confirmamos que el fallback funciona correctamente.</li>
+        <li><strong>Testing en móvil Android</strong> — Las cards del bento grid se superponían en 360px. Corregimos con un media query adicional.</li>
+        <li><strong>Corrección del reproductor</strong> — El audio seguía sonando al navegar a otra página. Solucionamos pausándolo en el evento pagehide.</li>
+        <li><strong>Dificultad</strong> — backdrop-filter no funcionaba en algunos navegadores sin prefijo -webkit-. Agregamos ambas versiones.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>🚀 28 de Abril — Deploy y Documentación</h2>
+      <div class="fecha">Lunes, 28 de Abril de 2025</div>
+      <p>Etapa final: subida del repositorio a GitHub, deploy en Vercel y redacción del README.md completo con todas las secciones requeridas.</p>
+      <ul>
+        <li><strong>Repositorio GitHub</strong> — Creación del repo, .gitignore y primeros commits por integrante.</li>
+        <li><strong>Deploy en Vercel</strong> — Configuración del proyecto y verificación del dominio: unknow-team.vercel.app.</li>
+        <li><strong>README.md</strong> — Documentación completa con paleta de colores, tipografías, funciones JS y uso de IA.</li>
+        <li><strong>Cambio importante</strong> — Eliminamos el hero redundante de las páginas de integrantes y migramos todo a un Bento Grid puro, lo que mejoró significativamente la legibilidad en móviles.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2>🔁 30 de Abril — Revisión Final</h2>
+      <div class="fecha">Miércoles, 30 de Abril de 2025</div>
+      <p>Revisión general del proyecto antes de la entrega. Verificamos que todos los requerimientos obligatorios estuvieran cubiertos y mejoramos detalles de diseño menores.</p>
+      <ul>
+        <li><strong>Checklist de requerimientos</strong> — Confirmamos: portada ✅, tarjetas individuales ✅, bitácora ✅, responsive ✅, JS interactivo ✅, README ✅, uso de IA ✅.</li>
+        <li><strong>Mejoras de detalle</strong> — Ajustamos el espaciado del header en mobile, refinamos las animaciones del efecto fuego.</li>
+        <li><strong>Reflexión del equipo</strong> — El mayor aprendizaje fue el trabajo con CSS Grid avanzado y la coordinación entre branches de Git sin conflictos de merge.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

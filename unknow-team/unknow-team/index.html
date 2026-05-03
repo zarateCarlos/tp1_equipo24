@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.addEventListener('pageswap', async (e) => {
+      if (e.viewTransition) { await document.fonts.ready; }
+    });
+  </script>
+  <title>UNKNOW</title>
+</head>
+<body>
+
+  <header>
+    <span>UNKNOW</span>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="bitacora.html">Bitácora</a>
+      <button id="fireEffect" class="fire-btn">🔥 Fuego</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Somos <span>UNKNOW</span><br>imagina y crea con nosotros</h1>
+    <p class="intro-text">
+      Somos un equipo de cuatro desarrolladores apasionados por el diseño y la tecnología.
+      Combinamos creatividad y código para construir experiencias web modernas y memorables.
+    </p>
+
+    <div class="bento-grid">
+
+      <a href="Integrantes/carlos.html" class="bento-card" style="view-transition-name: carlos">
+        <span class="member-role">Backend Developer</span>
+        <span class="member-name">Carlos Zárate</span>
+        <span class="member-location">📍 Buenos Aires, AR</span>
+        <span class="member-arrow">→</span>
+      </a>
+
+      <a href="Integrantes/heber.html" class="bento-card" style="view-transition-name: heber">
+        <span class="member-role">Frontend Developer</span>
+        <span class="member-name">Heber Choque</span>
+        <span class="member-location">📍 Buenos Aires, AR</span>
+        <span class="member-arrow">→</span>
+      </a>
+
+      <a href="Integrantes/javier.html" class="bento-card" style="view-transition-name: javier">
+        <span class="member-role">Full Stack Developer</span>
+        <span class="member-name">Javier Navarro</span>
+        <span class="member-location">📍 Buenos Aires, AR</span>
+        <span class="member-arrow">→</span>
+      </a>
+
+      <a href="Integrantes/leandro.html" class="bento-card" style="view-transition-name: leandro">
+        <span class="member-role">UX/UI Designer</span>
+        <span class="member-name">Leandro Melchiori</span>
+        <span class="member-location">📍 Buenos Aires, AR</span>
+        <span class="member-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

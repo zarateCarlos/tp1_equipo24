@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <title>Heber Choque — UNKNOW</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23ff2a2a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='14' font-family='system-ui,sans-serif' font-weight='800'%3EU%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body style="view-transition-name: heber">
+
+  <!-- Moon for blackout mode -->
+  <div class="moon-svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="moonGradient" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#e6e6e6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#999;stop-opacity:1" />
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="45" fill="url(#moonGradient)" />
+      <circle cx="35" cy="40" r="8" fill="#bbb" opacity="0.5"/>
+      <circle cx="60" cy="55" r="12" fill="#bbb" opacity="0.4"/>
+      <circle cx="45" cy="65" r="6" fill="#bbb" opacity="0.6"/>
+      <circle cx="65" cy="35" r="5" fill="#bbb" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Stars for blackout mode - tiny sparkles -->
+  <div class="stars">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tiny cross sparkles (10x smaller) -->
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/><path d="M20 30h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3s" repeatCount="indefinite"/><path d="M50 15h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.5s" repeatCount="indefinite"/><path d="M80 40h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/><path d="M120 25h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.15;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M160 50h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.8s" repeatCount="indefinite"/><path d="M180 20h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.2s" repeatCount="indefinite"/><path d="M30 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.3s" repeatCount="indefinite"/><path d="M70 70h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="3.8s" repeatCount="indefinite"/><path d="M140 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.6s" repeatCount="indefinite"/><path d="M170 100h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <!-- Extra tiny sparkles -->
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.2s" repeatCount="indefinite"/><path d="M45 45h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M95 25h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.7s" repeatCount="indefinite"/><path d="M145 35h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="3.1s" repeatCount="indefinite"/><path d="M190 60h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.4s" repeatCount="indefinite"/><path d="M10 90h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+    </svg>
+  </div>
+
+  <!-- UFO SVG for Heber -->
+  <div class="ufo-svg">
+    <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cabina -->
+      <ellipse cx="50" cy="25" rx="20" ry="15" fill="#aaddff" stroke="#6699cc" stroke-width="1"/>
+      <!-- Cuerpo del OVNI -->
+      <ellipse cx="50" cy="35" rx="45" ry="12" fill="#888" stroke="#555" stroke-width="1"/>
+      <!-- Línea divisoria -->
+      <ellipse cx="50" cy="35" rx="35" ry="8" fill="none" stroke="#aaa" stroke-width="1"/>
+      <!-- Luces verdes -->
+      <circle cx="20" cy="38" r="3" fill="#0f0"/>
+      <circle cx="35" cy="42" r="3" fill="#0f0"/>
+      <circle cx="50" cy="44" r="3" fill="#0f0"/>
+      <circle cx="65" cy="42" r="3" fill="#0f0"/>
+      <circle cx="80" cy="38" r="3" fill="#0f0"/>
+      <!-- Haz de luz -->
+      <path d="M30 45 L20 60 L80 60 L70 45 Z" fill="#0f0" opacity="0.2"/>
+    </svg>
+  </div>
+
+  <div class="header-row">
+    <header>
+      <a href="../../index.html" class="header-title">UNKNOW</a>
+      <nav>
+        <a href="../../bitacora.html">Bitácora</a>
+      </nav>
+    </header>
+    <a href="../../index.html" class="back-island">← Volver</a>
+  </div>
+
+  <div class="integrante-wrapper">
+    <div class="grid-container">
+      <div class="integrante-bento">
+
+      <!-- Perfil -->
+      <div class="i-card i-profile">
+        <div class="avatar avatar-water"><svg viewBox="0 0 24 24" fill="none" stroke="#4a90d9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"/></svg></div>
+        <div class="member-full-name">Heber Choque</div>
+        <div class="meta-row">
+          <span>Banfield, Buenos Aires</span>
+          <span>23 años</span>
+        </div>
+        <button id="blackoutBtn" class="blackout-toggle"><span style="color: #ffd700; font-weight: 700;">¿tenemos visitas?</span></button>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="i-card i-bio">
+        <span class="card-tag skills-tag">Habilidades</span>
+        <div class="skills-bento skills-water">
+          <div class="skill-box">HTML</div>
+          <div class="skill-box">CSS</div>
+          <div class="skill-box">JavaScript</div>
+          <div class="skill-box">Fotografía</div>
+          <div class="skill-box">Música</div>
+          <div class="skill-box">React</div>
+          <div class="skill-box">Node.js</div>
+          <div class="skill-box">Git</div>
+          <div class="skill-box">Diseño UI</div>
+        </div>
+      </div>
+
+      <!-- Música -->
+      <div class="i-card i-skills">
+        <span class="card-tag music-tag">Álbumes favoritos</span>
+        <div class="movies-grid music-posters">
+          <article class="movie-poster music-poster" data-mp3="./canciones/Chaqueño Palavecino - La Sin Corazón.mp3">
+            <img src="./canciones/la_ley_y_la_trampa.jpg" alt="La ley y la trampa — Chaqueño Palavecino" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <div class="movie-info music-poster-foot">
+              <div class="music-content">
+                <div class="movie-title">La ley y la trampa</div>
+                <div class="movie-artist">Chaqueño Palavecino</div>
+              </div>
+              <button type="button" class="music-btn" aria-label="Reproducir muestra del álbum">▶</button>
+            </div>
+          </article>
+          <article class="movie-poster music-poster" data-mp3="./canciones/Miranda! - Ya Lo Sabía.mp3">
+            <img src="./canciones/magistral.jpg" alt="Magistral — Miranda!" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <div class="movie-info music-poster-foot">
+              <div class="music-content">
+                <div class="movie-title">Magistral</div>
+                <div class="movie-artist">Miranda!</div>
+              </div>
+              <button type="button" class="music-btn" aria-label="Reproducir muestra del álbum">▶</button>
+            </div>
+          </article>
+          <article class="movie-poster music-poster" data-mp3="./canciones/No Me Lo Creo - La Nueva Luna.mp3">
+            <img src="./canciones/la_fuerza-joven.jpg" alt="La fuerza del joven — La Nueva Luna" class="movie-image" loading="lazy" decoding="async" width="200" height="280">
+            <div class="movie-info music-poster-foot">
+              <div class="music-content">
+                <div class="movie-title">La fuerza del joven</div>
+                <div class="movie-artist">La Nueva Luna</div>
+              </div>
+              <button type="button" class="music-btn" aria-label="Reproducir muestra del álbum">▶</button>
+            </div>
+          </article>
+        </div>
+        <p class="music-tagline">¡Buena música para programar!</p>
+      </div>
+
+      <!-- Películas -->
+      <div class="i-card i-movies">
+        <span class="card-tag movies-tag">Películas favoritas</span>
+        <div class="movies-grid">
+          <div class="movie-poster">
+            <img src="./peliculas/alienR.jpg" alt="Alien" class="movie-image">
+            <div class="movie-info">
+              <div class="movie-title">Alien</div>
+            </div>
+          </div>
+          <div class="movie-poster">
+            <img src="./peliculas/cazafantaasmas.jpg" alt="Cazafantasmas" class="movie-image">
+            <div class="movie-info">
+              <div class="movie-title">Cazafantasmas</div>
+            </div>
+          </div>
+          <div class="movie-poster">
+            <img src="./peliculas/rocky.jpg" alt="Rocky" class="movie-image">
+            <div class="movie-info">
+              <div class="movie-title">Rocky</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div><!-- /grid-container -->
+  </div><!-- /wrapper -->
+
+  <footer>
+    <p>© 2026 - Un desarrollo hecho por el equipo UNKNOW</p>
+  </footer>
+
+  <script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Bitácora — UNKNOW</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23ff2a2a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='14' font-family='system-ui,sans-serif' font-weight='800'%3EU%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Moon for blackout mode -->
+  <div class="moon-svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="moonGradient" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#e6e6e6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#999;stop-opacity:1" />
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="45" fill="url(#moonGradient)" />
+      <circle cx="35" cy="40" r="8" fill="#bbb" opacity="0.5"/>
+      <circle cx="60" cy="55" r="12" fill="#bbb" opacity="0.4"/>
+      <circle cx="45" cy="65" r="6" fill="#bbb" opacity="0.6"/>
+      <circle cx="65" cy="35" r="5" fill="#bbb" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Stars for blackout mode - tiny sparkles -->
+  <div class="stars">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tiny cross sparkles (10x smaller) -->
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/><path d="M20 30h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3s" repeatCount="indefinite"/><path d="M50 15h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.5s" repeatCount="indefinite"/><path d="M80 40h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/><path d="M120 25h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.15;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M160 50h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.8s" repeatCount="indefinite"/><path d="M180 20h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.2s" repeatCount="indefinite"/><path d="M30 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.3s" repeatCount="indefinite"/><path d="M70 70h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="3.8s" repeatCount="indefinite"/><path d="M140 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.6s" repeatCount="indefinite"/><path d="M170 100h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <!-- Extra tiny sparkles -->
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.2s" repeatCount="indefinite"/><path d="M45 45h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M95 25h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.7s" repeatCount="indefinite"/><path d="M145 35h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="3.1s" repeatCount="indefinite"/><path d="M190 60h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.4s" repeatCount="indefinite"/><path d="M10 90h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+    </svg>
+  </div>
+
+  <!-- Floating Moon Button -->
+  <button class="moon-btn-fixed" id="moonBtn" aria-label="Luna">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="#ff8c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </button>
+  <div class="moon-hint" id="moonHint">🌙 Modo noche activado. 🔥 El fuego ilumina...</div>
+
+  <!-- Torch/Fire SVG -->
+  <div class="fire-svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fireGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#ff2a2a;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="fireGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+          <stop offset="60%" style="stop-color:#ffa500;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <path d="M50 95 Q30 70 25 50 Q20 30 35 20 Q40 10 50 5 Q60 10 65 20 Q80 30 75 50 Q70 70 50 95" fill="url(#fireGradient1)" opacity="0.9"/>
+      <path d="M50 90 Q38 72 35 55 Q32 40 42 32 Q45 25 50 15 Q55 25 58 32 Q68 40 65 55 Q62 72 50 90" fill="url(#fireGradient2)" opacity="0.85"/>
+      <path d="M50 85 Q42 70 40 58 Q38 48 45 42 Q48 38 50 30 Q52 38 55 42 Q62 48 60 58 Q58 70 50 85" fill="#ffff99" opacity="0.9"/>
+      <ellipse cx="50" cy="75" rx="8" ry="12" fill="#ffffff" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <div class="header-row">
+    <header>
+      <a href="./index.html" class="header-title">UNKNOW</a>
+      <nav>
+        <a href="./bitacora.html">Bitácora</a>
+        <button id="fireEffect" class="fire-btn">🔥 Fuego</button>
+      </nav>
+    </header>
+    <a href="./index.html" class="back-island">← Volver</a>
+  </div>
+
+  <section class="hero interior">
+    <h1>Bitácora del Proyecto</h1>
+    <p>Documentación del proceso de desarrollo, decisiones de diseño y dificultades encontradas durante la creación del sitio web de UNKNOW.</p>
+    <svg class="scroll-arrow" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
+  </section>
+
+  <section class="bitacora-content">
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 19 de Abril — Inicio del Proyecto</h2>
+      <div class="fecha">Sábado, 19 de Abril de 2026</div>
+      <p>Inicio del proyecto UNKNOW. Se definió orientar el diseño hacia una estética moderna y minimalista con un sistema de Bento Grid para las tarjetas de integrantes.</p>
+      <ul>
+        <li><strong>Definición de objetivos y alcance</strong> — Se estableció que la web debía ser 100% responsive con al menos tres breakpoints (400px, 900px, 1200px).</li>
+        <li><strong>Decisión de diseño</strong> — Se eligió Bento Grid como layout principal por su versatilidad responsiva y estética contemporánea.</li>
+        <li><strong>Estructura inicial</strong> — Se organizaron archivos en carpetas: css/, js/, img/, Integrantes/, bitacora.html e index.html en raíz.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 21 de Abril — Diseño UI/UX y Estructura HTML</h2>
+      <div class="fecha">Lunes, 21 de Abril de 2026</div>
+      <p>Definición de la identidad visual del proyecto y creación de la estructura base del sitio. Se implementó el HTML semántico y se comenzó con los estilos CSS principales.</p>
+      <ul>
+        <li><strong>Paleta de colores</strong> — Se definió #e6e3dc (fondo beige claro), #ff2a2a (rojo acento), #1a1a1a (negro mate para cards de perfil), #0d0c0c (texto).</li>
+        <li><strong>Tipografías</strong> — Se seleccionó Playfair Display para títulos (elegancia serif), Google Sans para cuerpo (legibilidad moderna).</li>
+        <li><strong>Estructura HTML</strong> — Se creó index.html portada con grid de integrantes, bitacora.html para documentación, y 4 páginas individuales en /Integrantes.</li>
+        <li><strong>Decision de diseño</strong> — Se optó por avatares con emojis en lugar de fotos reales para proteger la privacidad de los integrantes, cumpliendo con el requerimiento del TP.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 23 de Abril — CSS Grid y Responsive Design</h2>
+      <div class="fecha">Miércoles, 23 de Abril de 2026</div>
+      <p>Implementación del sistema de Bento Grid y desarrollo de los estilos responsive para los tres breakpoints obligatorios del TP.</p>
+      <ul>
+        <li><strong>Bento Grid</strong> — Implementación con CSS Grid usando grid-template-columns: repeat(12, 1fr) y grid-column: span para distribución flexible.</li>
+        <li><strong>Breakpoints</strong> — Media queries para ≤400px (mobile 1 columna), ≤900px (tablet 2 columnas), ≤1200px (desktop 2-3 columnas).</li>
+        <li><strong>Cards de integrantes</strong> — Diseño de 5 cards por integrante: perfil (negro mate), bio, habilidades, música y películas.</li>
+        <li><strong>Dificultad</strong> — El grid colapsaba en móviles pequeños. Se solucionó forzando grid-column: span 1 en todas las cards para ≤600px.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 25 de Abril — Efecto Blackout y Animaciones</h2>
+      <div class="fecha">Viernes, 25 de Abril de 2026</div>
+      <p>Desarrollo de las funcionalidades interactivas principales: efecto blackout (modo noche) con luna y estrellas, y animaciones individuales únicas para cada integrante.</p>
+      <ul>
+        <li><strong>Efecto Blackout</strong> — Modo oscuro que activa: luna SVG grande, estrellas titilantes (cruces diminutas animadas), y oscurecimiento del fondo.</li>
+        <li><strong>Botón flotante de luna</strong> — Ubicado abajo a la derecha, togglea el modo blackout y muestra mensaje de ayuda "El fuego ilumina..." por 3 segundos.</li>
+        <li><strong>Animaciones individuales</strong> — Cada integrante tiene una animación única:
+          <ul>
+            <li>Index: Luna estática + estrellas titilantes</li>
+            <li>Carlos: Avión volando de izquierda a derecha</li>
+            <li>Heber: OVNI flotando con luz verde pulsante</li>
+            <li>Javier: Perro caminando desde abajo</li>
+            <li>Leandro: Gato caminando desde abajo (espejo del perro)</li>
+          </ul>
+        </li>
+        <li><strong>Dificultad</strong> — Las animaciones del perro y gato quedaban "planas" (estáticas). Se rediseñaron para que caminen, se den vuelta y vuelvan a salir, dando más dinamismo.</li>
+        <li><strong>View Transitions API</strong> — Implementación de navegación fluida entre páginas. Intercepta clicks en links internos y aplica transiciones suaves con fallback para navegadores no compatibles.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 28 de Abril — Rediseño de Cards de Habilidades</h2>
+      <div class="fecha">Lunes, 28 de Abril de 2026</div>
+      <p>Iteración del diseño de las cards de habilidades. Intentamos una sopa de letras interactiva pero terminamos optando por un diseño limpio y minimalista coherente con el resto del sitio.</p>
+      <ul>
+        <li><strong>Intento: Sopa de letras</strong> — Se creó una grilla 10×6 donde las habilidades aparecían ocultas entre letras aleatorias, destacadas en rojo.</li>
+        <li><strong>Problema</strong> — La sopa de letras ocupaba demasiado espacio vertical y no encajaba visualmente con las cards de música/películas.</li>
+        <li><strong>Decisión de diseño</strong> — Grid bento de 9 habilidades (3×3) con mini cajas estilo glassmorphism, reemplazando la lista simple anterior.</li>
+        <li><strong>Títulos jerárquicos</strong> — Tags estilo especialidad (Habilidades / Discos / Películas) con línea divisoria sutil, sin fondos de color llamativos ni emojis excesivos.</li>
+        <li><strong>Grid de pósters para películas</strong> — Transformación a grid tipo tarjeta/póster con 3 columnas, mostrando imagen de portada arriba, icono de cine + nombre de película en negrita, y director/fecha abajo.</li>
+        <li><strong>Eliminación de glassmorphism</strong> — Se quitó el degradado blanco de las cards porque interfería con el modo blackout.</li>
+        <li><strong>Simplificación de Perfiles</strong> — Eliminación de roles laborales (Backend/Frontend/Full Stack/UX). Ahora solo muestra: nombre, ubicación específica (ej: "Monte Grande, Buenos Aires"), y edad.</li>
+        <li><strong>Avatares SVG Elementales</strong> — Reemplazo de emojis por iconos SVG minimalistas representando elementos naturales con colores distintivos para cada integrante.</li>
+        <li><strong>Iconografía Profesional</strong> — Reemplazo de emojis 🎵🎬📍🎂 por SVGs elegantes y consistentes en todas las páginas de integrantes.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 30 de Abril — Testing Responsive y Ajustes</h2>
+      <div class="fecha">Miércoles, 30 de Abril de 2026</div>
+      <p>Testing en múltiples viewports y corrección de detalles visuales. Se verificó que todo funcionara correctamente en los breakpoints requeridos.</p>
+      <ul>
+        <li><strong>Testing en 400px</strong> — Se verificó que todas las cards se apilen en 1 columna y el texto sea legible.</li>
+        <li><strong>Testing en 900px</strong> — Se confirmó que el grid se reorganice en 2 columnas sin superposiciones.</li>
+        <li><strong>Testing en 1200px+</strong> — Layout completo con distribución óptima del Bento Grid.</li>
+        <li><strong>Corrección visual</strong> — Card de perfil (i-profile) cambiada a negro mate (#1a1a1a) para mejor contraste y coherencia visual.</li>
+        <li><strong>Modo blackout</strong> — Se verificó que las estrellas titilen correctamente y la luna se vea bien en todos los tamaños de pantalla.</li>
+        <li><strong>Responsive Grid Fix</strong> — Durante el testing se detectó desbordamiento horizontal en páginas de integrantes en viewports de 900px. Se implementó grilla de 1 columna con <code>grid-template-columns: 1fr</code> y <code>min-width: 0</code> para evitar overflow.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 1-2 de Mayo — Documentación Final y Polish</h2>
+      <div class="fecha">Jueves 1 - Viernes 2 de Mayo de 2026</div>
+      <p>Redacción completa del README.md y actualización de la bitácora con el proceso real de desarrollo. Preparación para deploy en Vercel.</p>
+      <ul>
+        <li><strong>README.md</strong> — Documentación completa con: título, descripción, integrantes con links a GitHub, tecnologías, estructura de archivos, guía de estilos (paleta, tipografías, breakpoints), funciones JS detalladas, uso de IA, y link al deploy.</li>
+        <li><strong>Bitácora actualizada</strong> — Documentación del proceso de desarrollo completo.</li>
+        <li><strong>Preparación para deploy</strong> — Verificación de que todos los archivos estén en su lugar correcto según la estructura requerida.</li>
+        <li><strong>Alineación del Reproductor</strong> — Botón de play alineado verticalmente con el texto de la canción mediante <code>inline-flex</code>, <code>vertical-align: middle</code> y ajuste fino con <code>position: relative; top: -1px</code>.</li>
+        <li><strong>Modo Blackout — UNKNOW en rojo</strong> — Ajuste del CSS para que en modo noche, el texto del hero sea blanco pero "UNKNOW" mantenga su color rojo de marca.</li>
+        <li><strong>Modo Blackout en Integrantes</strong> — Corrección de colores en modo oscuro: nombres de integrantes en blanco (#fff), títulos de cards (Habilidades/Discos/Películas) en blanco, y habilidades con fondos de color acorde al avatar de cada integrante para mejor legibilidad y cohesión visual.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <h2><span class="timeline-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span> 3 de Mayo — Revisión Final y Cierre</h2>
+      <div class="fecha">Domingo, 3 de Mayo de 2026</div>
+      <p>Revisión final del proyecto, verificación contra requerimientos del TP y reflexión sobre el proceso de desarrollo.</p>
+      <ul>
+        <li><strong>Checklist de requerimientos</strong> —
+          <ul>
+            <li>✅ Portada (index.html) con nombre del equipo, presentación y listado de integrantes</li>
+            <li>✅ Tarjetas individuales con: foto/avatar, nombre, ubicación, edad, habilidades (9), películas (3), música (3)</li>
+            <li>✅ Bitácora con descripción del proceso de desarrollo</li>
+            <li>✅ Responsive: breakpoints en 400px, 900px, 1200px</li>
+            <li>✅ JavaScript interactivo: modo blackout con persistencia sessionStorage, reproductor de música, View Transitions API para navegación fluida entre páginas</li>
+            <li>✅ README.md completo con todas las secciones requeridas</li>
+            <li>✅ Uso de IA documentado</li>
+            <li>✅ Estructura de archivos correcta (HTML raíz, CSS en /css, JS en /js, img en /img)</li>
+            <li>✅ Navegación con botones (sin depender del "Atrás" del navegador)</li>
+          </ul>
+        </li>
+        <li><strong>Uso de IA en el proyecto</strong> — Se utilizó Claude (Anthropic) como asistente de desarrollo para: generación de código CSS/JS, debugging, optimización de animaciones, y redacción de documentación.</li>
+        <li><strong>Reflexión final</strong> — El mayor aprendizaje fue cómo iterar rápidamente sobre diseños (como la sopa de letras que terminó en lista simple) y la importancia de mantener coherencia visual entre todas las cards. Se valoró también la importancia del testing en múltiples viewports para detectar problemas de responsive que no son evidentes en desarrollo local.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 - Un desarrollo hecho por el equipo UNKNOW</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

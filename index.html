@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.addEventListener('pageswap', (e) => {
+      if (!e.viewTransition) return;
+      void (async () => {
+        try { await document.fonts.ready; } catch (_) {}
+      })();
+    });
+  </script>
+  <title>UNKNOW</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23ff2a2a' width='32' height='32' rx='6'/%3E%3Ctext x='16' y='21' text-anchor='middle' fill='white' font-size='14' font-family='system-ui,sans-serif' font-weight='800'%3EU%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Moon for blackout mode -->
+  <div class="moon-svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="moonGradient" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#e6e6e6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#999;stop-opacity:1" />
+        </radialGradient>
+      </defs>
+      <circle cx="50" cy="50" r="45" fill="url(#moonGradient)" />
+      <circle cx="35" cy="40" r="8" fill="#bbb" opacity="0.5"/>
+      <circle cx="60" cy="55" r="12" fill="#bbb" opacity="0.4"/>
+      <circle cx="45" cy="65" r="6" fill="#bbb" opacity="0.6"/>
+      <circle cx="65" cy="35" r="5" fill="#bbb" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Stars for blackout mode - tiny sparkles -->
+  <div class="stars">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tiny cross sparkles (10x smaller) -->
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/><path d="M20 30h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3s" repeatCount="indefinite"/><path d="M50 15h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.5s" repeatCount="indefinite"/><path d="M80 40h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/><path d="M120 25h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.15;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M160 50h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.8s" repeatCount="indefinite"/><path d="M180 20h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.15;0.6" dur="3.2s" repeatCount="indefinite"/><path d="M30 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.3s" repeatCount="indefinite"/><path d="M70 70h-0.6v-0.6h0.6v-0.6h0.6v0.6h0.6v0.6h-0.6v0.6h-0.6z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.18;0.7" dur="3.8s" repeatCount="indefinite"/><path d="M140 80h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.25;0.9" dur="2.6s" repeatCount="indefinite"/><path d="M170 100h-0.5v-0.5h0.5v-0.5h0.5v0.5h0.5v0.5h-0.5v0.5h-0.5z" fill="#fff"/></g>
+      <!-- Extra tiny sparkles -->
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.2s" repeatCount="indefinite"/><path d="M45 45h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.8"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3.5s" repeatCount="indefinite"/><path d="M95 25h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.6"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.7s" repeatCount="indefinite"/><path d="M145 35h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+      <g opacity="0.9"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="3.1s" repeatCount="indefinite"/><path d="M190 60h-0.4v-0.4h0.4v-0.4h0.4v0.4h0.4v0.4h-0.4v0.4h-0.4z" fill="#fff"/></g>
+      <g opacity="0.7"><animate attributeName="opacity" values="0.7;0.15;0.7" dur="2.4s" repeatCount="indefinite"/><path d="M10 90h-0.3v-0.3h0.3v-0.3h0.3v0.3h0.3v0.3h-0.3v0.3h-0.3z" fill="#fff"/></g>
+    </svg>
+  </div>
+
+  <!-- Floating Moon Button -->
+  <button class="moon-btn-fixed" id="moonBtn" aria-label="Luna">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="#ff8c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </button>
+  <div class="moon-hint" id="moonHint">🌙 Modo noche activado. 🔥 El fuego ilumina...</div>
+
+  <!-- Torch/Fire SVG -->
+  <div class="fire-svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="fireGradient1" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#ff2a2a;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#ff8c00;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="fireGradient2" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#ff4500;stop-opacity:1" />
+          <stop offset="60%" style="stop-color:#ffa500;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <!-- Outer flames -->
+      <path d="M50 95 Q30 70 25 50 Q20 30 35 20 Q40 10 50 5 Q60 10 65 20 Q80 30 75 50 Q70 70 50 95" fill="url(#fireGradient1)" opacity="0.9"/>
+      <!-- Middle flames -->
+      <path d="M50 90 Q38 72 35 55 Q32 40 42 32 Q45 25 50 15 Q55 25 58 32 Q68 40 65 55 Q62 72 50 90" fill="url(#fireGradient2)" opacity="0.85"/>
+      <!-- Inner flames -->
+      <path d="M50 85 Q42 70 40 58 Q38 48 45 42 Q48 38 50 30 Q52 38 55 42 Q62 48 60 58 Q58 70 50 85" fill="#ffff99" opacity="0.9"/>
+      <!-- Core -->
+      <ellipse cx="50" cy="75" rx="8" ry="12" fill="#ffffff" opacity="0.8"/>
+    </svg>
+  </div>
+
+  <div class="header-row">
+    <header>
+      <a href="./index.html" class="header-title">UNKNOW</a>
+      <nav>
+        <a href="./bitacora.html">Bitácora</a>
+        <button id="fireEffect" class="fire-btn">🔥 Fuego</button>
+      </nav>
+    </header>
+  </div>
+
+  <section class="hero">
+    <h1>Somos <span>UNKNOW</span><br>Imagina y crea con nosotros</h1>
+    <p class="intro-text">
+      Un equipo especializado en combinar creatividad y calidad.<br>
+      Software a medida, preciso y profesional. Un equipo, tu equipo.
+    </p>
+
+    <h2 class="integrantes-title">Integrantes</h2>
+
+    <div class="bento-grid">
+
+      <a href="Integrantes/carlos/carlos.html" class="bento-card" style="view-transition-name: carlos">
+        <span class="member-arrow">→</span>
+        <span class="member-name">Carlos Zárate</span>
+      </a>
+
+      <a href="Integrantes/heber/heber.html" class="bento-card" style="view-transition-name: heber">
+        <span class="member-arrow">→</span>
+        <span class="member-name">Heber Choque</span>
+      </a>
+
+      <a href="Integrantes/javier/javier.html" class="bento-card" style="view-transition-name: javier">
+        <span class="member-arrow">→</span>
+        <span class="member-name">Javier Navarro</span>
+      </a>
+
+      <a href="Integrantes/leandro/leandro.html" class="bento-card" style="view-transition-name: leandro">
+        <span class="member-arrow">→</span>
+        <span class="member-name">Leandro Melchiori</span>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 - Un desarrollo hecho por el equipo UNKNOW</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
