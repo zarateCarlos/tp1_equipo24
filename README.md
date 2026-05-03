@@ -1,218 +1,173 @@
-# UNKNOW TEAM - Proyecto Web
+# UNKNOW — Proyecto Web
 
-## 📋 Título del Proyecto
-**UNKNOW TEAM** - Sitio Web Portafolio del Equipo
+## 📌 Título del proyecto
 
-## 🔗 Enlace al Deploy
-[https://unknow-team.vercel.app](https://unknow-team.vercel.app)
+**UNKNOW** — Sitio web portafolio del equipo (TP1).
+
+## 🔗 Enlace al deploy
+
+👉 [https://tp1-equipo24.vercel.app/](https://tp1-equipo24.vercel.app/)
 
 ---
 
-## 📖 Descripción del Proyecto
-UNKNOW TEAM es un sitio web moderno y elegante diseñado para presentar al equipo. Este trabajo práctico combina diseño minimalista con funcionalidades web contemporáneas, creando una experiencia visual impactante y profesional. El objetivo principal es mostrar las habilidades y perfiles individuales de cada integrante mediante un diseño innovador con **Bento Grids** y efectos visuales avanzados.
+## 📖 Descripción del proyecto
 
-### Funcionalidades Básicas
-- **Navegación fluida** entre páginas con View Transitions API (con fallback para Firefox)
-- **Perfiles individuales** con información detallada de cada integrante en Bento Grid
-- **Bento Grid Layout** adaptativo y completamente responsive
-- **Efectos interactivos** incluyendo modo blackout con luna, estrellas titilantes y animaciones individuales por integrante
-- **Diseño totalmente responsive** para móviles (≤400px), tablets (≤900px) y escritorios (≤1200px)
-- **Reproductor de música** con control de estado en páginas individuales
+Sitio web para presentar al equipo y a cada integrante. Combina diseño minimalista con funcionalidades actuales: **Bento Grid** responsive, **View Transitions** en la navegación interna, modo **blackout** con elementos SVG animados, reproductor de audio en las fichas de música y bitácora del desarrollo.
+
+### ✨ Funcionalidades principales
+
+- 🧭 Navegación interna con **View Transitions API** (donde el navegador lo permite).
+- 👤 **Perfiles** por integrante con layout tipo bento.
+- 🏠 **Portada** con acceso a las cuatro fichas de integrantes.
+- ✨ **Efectos**: modo blackout (luna, estrellas, antorcha SVG), animaciones SVG por integrante (avión, OVNI, perro, gato) y efecto fuego en títulos.
+- 📱 **Responsive** con breakpoints en **400px**, **900px** y **1200px**.
+- 🎵 **Reproductor de música** en las páginas de integrantes (archivos locales en cada carpeta `canciones/`).
 
 ---
 
 ## 👥 Integrantes
 
-| Nombre | GitHub |
-|--------|---------|
-| **Carlos Zárate** | [github.com/carloszarate](https://github.com/carloszarate) |
-| **Heber Choque** | [github.com/heberchoque](https://github.com/heberchoque) |
-| **Javier Navarro** | [github.com/javiernavarro](https://github.com/javiernavarro) |
-| **Leandro Melchiori** | [github.com/leandromelchiori](https://github.com/leandromelchiori) |
+- **Carlos Zárate**
+- **Heber Choque**
+- **Javier Navarro**
+- **Leandro Melchiori**
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
-### Lenguajes y APIs
-- **HTML5** — Semántica moderna, estructura accesible y uso de meta viewport
-- **CSS3** — Animaciones @keyframes, CSS Grid, Flexbox, media queries avanzadas
-- **JavaScript Vanilla** — Funcionalidades interactivas sin dependencias externas
-- **View Transitions API** — Navegación fluida entre páginas con fallback nativo
+### 💻 Lenguajes y APIs
 
-### Recursos y Herramientas
-- **Google Fonts API** — Tipografías Playfair Display y Google Sans
-- **CSS Grid & Flexbox** — Layout moderno y responsive
-- **Session Storage API** — Persistencia de estado del modo blackout entre páginas
-- **Audio API (JS)** — Reproductor de música nativo del navegador
-- **Vercel** — Plataforma de deploy continuo desde GitHub
-- **Git & GitHub** — Control de versiones
+- 📄 **HTML5** — Estructura semántica, meta viewport con `viewport-fit=cover`.
+- 🎨 **CSS3** — Grid, Flexbox, `@keyframes`, variables CSS, media queries.
+- ⚡ **JavaScript (vanilla)** — Sin frameworks; blackout, música, navegación con view transitions.
+- 🔄 **View Transitions API** — Transición entre páginas estáticas enlazadas.
+- 🔊 **Web Audio** — Reproducción de pistas desde rutas locales.
+
+### 📦 Recursos
+
+- 🔤 **Google Fonts** — Playfair Display y Google Sans (`display=swap`).
+- 💾 **Session Storage** — Persistencia del modo blackout (y efecto fuego donde aplica).
+- ☁️ **Vercel** — Hosting del deploy público.
 
 ---
 
-## 📁 Estructura de Archivos
+## 📁 Estructura del proyecto
 
 ```
 TP1-Unknow/
-├── index.html              # Página principal / portada del equipo
-├── bitacora.html           # Bitácora del proyecto con cronograma
-├── README.md               # Documentación completa del proyecto
+├── index.html                 # Portada (equipo + enlaces a integrantes)
+├── bitacora.html              # Bitácora del proyecto
+├── README.md
+├── .gitignore
 ├── css/
-│   └── style.css           # Estilos principales, responsive y efectos
+│   └── style.css              # Estilos globales, responsive, blackout, animaciones
 ├── js/
-│   └── script.js           # Funcionalidades JavaScript (blackout, música, animaciones)
-├── img/                    # Recursos visuales y fotografías (avatares)
+│   └── script.js              # Fuego, música, blackout, view transitions, rutas de nav
 └── Integrantes/
-    ├── carlos.html         # Perfil de Carlos Zárate
-    ├── heber.html          # Perfil de Heber Choque
-    ├── javier.html         # Perfil de Javier Navarro
-    └── leandro.html        # Perfil de Leandro Melchiori
+    ├── carlos/
+    │   ├── carlos.html
+    │   ├── canciones/         # MP3 y tapas de álbum (.jpg)
+    │   └── peliculas/         # Posters / imágenes de películas
+    ├── heber/
+    │   ├── heber.html
+    │   ├── canciones/
+    │   └── peliculas/
+    ├── javier/
+    │   ├── javier.html
+    │   ├── canciones/
+    │   └── peliculas/
+    └── leandro/
+        ├── leandro.html
+        ├── canciones/
+        └── peliculas/
 ```
 
-**Notas de organización:**
-- `index.html` en raíz con Bento Grid de los 4 integrantes
-- Todos los estilos centralizados en `css/style.css`
-- JavaScript interactivo en `js/script.js`
-- Imágenes y avatares en `img/`
-- Páginas individuales en `Integrantes/` con rutas relativas a `../css/` y `../js/`
+### 📝 Notas
+
+- 🔗 Las páginas de integrantes enlazan a `../../css/style.css` y `../../js/script.js`.
+- 🖼️ Cada integrante mantiene sus **assets de audio e imagen** en su propia carpeta (`canciones/`, `peliculas/`).
 
 ---
 
-## 🎨 Guía de Estilos
+## 🎨 Guía de estilos
 
-### Paleta de Colores
-| Uso | Color | Hex |
-|-----|-------|-----|
-| Fondo principal | Beige elegante | `#e6e3dc` |
-| Color acento / bordes | Rojo corporativo | `#ff2a2a` |
-| Texto principal | Negro suave | `#0d0c0c` |
-| Texto secundario / light | Blanco claro | `#e6dede` |
-| Cards / contenedores | Blanco puro | `#ffffff` |
+### 🎯 Paleta
 
-### Tipografías
-- **Títulos:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display) — Serif elegante, pesos 400–900
-- **Cuerpo de texto:** [Google Sans](https://fonts.google.com/specimen/Google+Sans) — Sans-serif moderna, pesos 400–700
+| Uso              | Hex       |
+|------------------|-----------|
+| Fondo principal  | `#e6e3dc` |
+| Acento / marca   | `#ff2a2a` |
+| Texto principal  | `#0d0c0c` |
+| Texto claro      | `#e6dede` |
+| Tarjetas         | `#ffffff` |
 
-### Breakpoints Responsive
-| Ancho | Dispositivo | Comportamiento |
-|-------|-------------|----------------|
-| ≤ 400px | Mobile pequeño | Columna única, tipografías reducidas |
-| ≤ 900px | Tablet / mobile grande | 2 columnas en portada, bento apilado |
-| ≤ 1200px | Desktop mediano | 2 columnas en portada |
+### ✒️ Tipografías
 
-### Iconografía
-- Emojis nativos y caracteres Unicode para avatares e íconos
-- Sin dependencias externas de íconos
-- Avatares: Emojis como representación visual (privacidad protegida)
+- **Títulos:** [Playfair Display](https://fonts.google.com/specimen/Playfair+Display)
+- **Cuerpo:** [Google Sans](https://fonts.google.com/specimen/Google+Sans)
 
----
+### 📐 Breakpoints
 
-## 💻 JavaScript — Funcionalidades Implementadas
+| Ancho    | Uso habitual        |
+|----------|---------------------|
+| ≤ 400px  | Móvil pequeño       |
+| ≤ 900px  | Tablet / móvil      |
+| ≤ 1200px | Ajustes de escritorio medio |
 
-### 1. Efecto Blackout (Modo Noche) — Todas las páginas
-- **Qué hace:** Activa un modo oscuro dramático con luna SVG, estrellas titilantes (cruces diminutas animadas con opacidad variable), y oscurecimiento del fondo beige a negro.
-- **Dónde está:** Botón flotante de luna ubicado abajo a la derecha en todas las páginas.
-- **Mensaje de ayuda:** Al hacer click, muestra "El fuego ilumina..." por 3 segundos junto al botón.
-- **Persistencia:** Estado guardado en `sessionStorage` con clave `blackoutActive`. Se mantiene al navegar entre páginas.
+### 🖌️ Gráficos e iconografía
 
-```javascript
-// Activación del modo blackout
-document.body.classList.toggle('blackout-active', active);
-sessionStorage.setItem('blackoutActive', next);
-```
-
-### 2. Animaciones Individuales por Integrante — Cada página individual
-Cada integrante tiene una animación única en modo blackout:
-
-- **Carlos (avión):** SVG de avión que vuela de izquierda a derecha, luego vuelve a entrar. Animación CSS con `@keyframes flyAcross`.
-- **Heber (OVNI):** OVNI que flota con luz verde pulsante. Animación con `@keyframes ufoHover`.
-- **Javier (perro):** Perro que camina desde la izquierda, se detiene en el centro, se da vuelta, y sale caminando a la derecha. `@keyframes dogWalk`.
-- **Leandro (gato):** Gato que entra desde la derecha (espejo del perro), hace el mismo recorrido invertido. `@keyframes catWalk`.
-- **Index (luna):** Luna estática con estrellas titilantes de fondo.
-
-### 3. Reproductor de Música — páginas individuales
-- **Qué hace:** Play/Pause sobre cada card de disco musical. Solo puede reproducirse un track a la vez.
-- **Dónde está:** Sección "Discos favoritos" en cada página individual (`Integrantes/*.html`).
-- **Estado:** Cambio visual en la card activa (borde rojo, fondo rosado) y cambio de texto en el botón (Play ↔ Stop).
-
-### 4. View Transitions API — Navegación fluida
-- **Qué hace:** Proporciona transiciones suaves y animadas entre páginas, creando una experiencia de navegación tipo "app" sin recargas bruscas.
-- **Cómo funciona:** Intercepta clicks en links internos, ejecuta `document.startViewTransition()`, y aplica animaciones CSS (`@keyframes view-transition`) mientras carga la nueva página.
-- **Dónde está:** Script general aplicado a todos los links de navegación interna (botones "Volver", cards de integrantes, nav links).
-- **Beneficio:** Mejora la percepción de velocidad y da sensación de aplicación web moderna.
-- **Fallback:** Navegación normal inmediata si el navegador no soporta la API (Firefox, Safari mobile).
-
-```javascript
-// Interceptar navegación y aplicar transición
-link.addEventListener('click', (e) => {
-  if (!document.startViewTransition) return; // Fallback
-  e.preventDefault();
-  document.startViewTransition(() => {
-    window.location.href = link.href;
-  });
-});
-```
+- 🎨 **SVG en línea** para luna, estrellas, fuego, animaciones por integrante (avión, OVNI, perro, gato) y avatares tipo “Pokémon” en el perfil.
+- 📅 Iconos de timeline en la bitácora como SVG simples.
+- 🚫 **Sin** packs de iconos externos; las ilustraciones son vectoriales en el propio HTML/CSS.
 
 ---
 
-## 📸 Capturas de Pantalla
+## ⚙️ JavaScript — Funciones principales
 
-> **Nota:** Agregar capturas del proyecto funcionando:
-> - Portada desktop (index.html)
-> - Portada mobile (<400px)
-> - Página de integrante en modo normal
-> - Página de integrante en modo blackout (luna visible, estrellas titilantes)
-> - Animación del avión en página de Carlos
-> - Animación del perro/gato en páginas de Javier/Leandro
+1. 🌑 **Blackout** — Clase en `body`, luna y estrellas, botón flotante; persistencia con `sessionStorage`.
+2. 🎬 **Animaciones por integrante** — Reglas CSS (`@keyframes`) coordinadas con SVG en cada HTML.
+3. 🎵 **Música** — `Audio` y botones en las cards de álbum; `data-mp3` y rutas relativas a `canciones/`.
+4. 🔀 **View transitions** — Intercepción de enlaces internos con `document.startViewTransition` y respeto a `prefers-reduced-motion` y clics con modificadores.
 
 ---
 
-## 🌐 Enlace al Proyecto Desplegado
+## ✅ Revisión final (checklist)
 
-**URL:** [https://unknow-team.vercel.app](https://unknow-team.vercel.app)
+- ✅ Portada con nombre del equipo, texto de presentación y enlaces a los cuatro integrantes.
+- ✅ Cuatro páginas de integrante con datos requeridos por la consigna (perfil, habilidades, películas, música).
+- ✅ Bitácora con el proceso de desarrollo.
+- ✅ Responsive en 400px, 900px y 1200px.
+- ✅ JavaScript: blackout, animaciones, música, view transitions donde corresponda.
+- ✅ README actualizado y uso de IA documentado.
+- ✅ Navegación por enlaces y botones del sitio (sin depender del botón Atrás del navegador).
 
-**Plataforma:** Vercel — Deploy automático desde repositorio GitHub
+### 💭 Reflexión breve
 
----
-
-## 📝 Revisión Final
-
-Antes de la entrega se realizó una revisión completa del proyecto verificando todos los requerimientos del TP.
-
-### Checklist de Requerimientos Cumplidos
-- ✅ Portada (index.html) con nombre del equipo, presentación y listado de integrantes
-- ✅ 4 páginas individuales con: avatar, nombre, ubicación, edad, 5 habilidades, 3 películas, 3 discos
-- ✅ Bitácora con descripción del proceso de desarrollo
-- ✅ Responsive: breakpoints implementados en 400px, 900px, 1200px
-- ✅ JavaScript interactivo: modo blackout en todas las páginas, animaciones individuales por integrante
-- ✅ README.md completo con todas las secciones requeridas
-- ✅ Uso de IA documentado
-- ✅ Estructura de archivos correcta (HTML raíz, CSS en /css, JS en /js)
-- ✅ Navegación con botones, sin depender del botón "Atrás" del navegador
-
-### Reflexión Final
-El mayor aprendizaje fue la importancia de iterar sobre el diseño. La evolución desde una sopa de letras interactiva hasta una lista simple de habilidades demostró que la coherencia visual es más valiosa que la complejidad. El uso de un Bento Grid consistente en todas las páginas unificó la experiencia de usuario y facilitó el mantenimiento del código.
+El trabajo priorizó una misma base visual (bento + tipografías) y un único `style.css` para mantener coherencia entre portada, bitácora e integrantes.
 
 ---
 
-## 🤖 Uso de Inteligencia Artificial
+## 🤖 Uso de inteligencia artificial
 
-### Herramientas Utilizadas
-- **Claude (Anthropic)** — Asistente principal de desarrollo, generación de código CSS/JS, debugging y redacción de documentación
-- **GitHub Copilot** — Autocompletado de código inline en Visual Studio Code
+### 🧰 Herramientas
 
-### Uso en Contenido y Código
-- **Generación de código CSS:** Creación de animaciones complejas (@keyframes para avión, OVNI, perro, gato), sistema de Bento Grid responsive, estilos de modo blackout con luna y estrellas titilantes.
-- **Optimización de diseño:** Iteraciones sobre el diseño de cards de habilidades (de sopa de letras a lista simple), ajustes de tamaño y espaciado responsive.
-- **Debugging JavaScript:** Implementación del sistema de blackout con sessionStorage para persistencia entre páginas, manejo de botón flotante con mensajes temporales.
-- **Estructura HTML:** Sugerencias de semántica y accesibilidad (atributos ARIA, roles, view-transition-name).
-- **Redacción de documentación:** Contenido del README.md y bitácora del proyecto.
+- **Claude (Anthropic)** — Apoyo principal en código, textos y revisión.
+- **Autocompletado del editor** (p. ej. Copilot u otro asistente inline) — Sugerencias de fragmentos y refactors puntuales.
 
-### Imágenes y Recursos Visuales
-- **Avatares:** Emojis nativos como representación visual (👨‍💻, 🎨, 🚀, ✏️) para proteger la privacidad de los integrantes, cumpliendo con el requerimiento del TP sobre no usar fotos reales.
-- **Animaciones SVG:** Luna, estrellas (cruces diminutas), avión, OVNI, perro y gato — todos creados como SVG inline con animaciones CSS.
-- **Sin uso de IA generativa de imágenes** — Optamos por SVGs vectoriales y emojis para mayor control, compatibilidad y velocidad de carga.
+### ✔️ En qué ayudó la IA
+
+- **CSS** — Layout bento, responsive, modo blackout, estilos de cards y rejillas de posters.
+- **JavaScript** — Lógica de `sessionStorage`, reproductor de música, interceptación de enlaces para view transitions, y **asistencia en el diseño y depuración de animaciones** (coordinación entre clases del `body` y tiempos de `keyframes`).
+- **HTML** — Semántica, atributos `aria-` donde aplica, comentarios de sección, estructura de carpetas por integrante.
+- **Animaciones** — Iteración sobre reglas `@keyframes` y animaciones SVG (avión, OVNI, perro, gato, estrellas, luna).
+- **Documentación** — Borradores de README y de entradas de bitácora, revisión general de redacción.
+
+### 🖼️ Imágenes y gráficos
+
+- **SVG** generados y refinados en el HTML con ayuda de la IA (formas, trazos, animaciones con `<animate>` o CSS).
+- **Imágenes raster** (tapas de disco y posters de película) son archivos locales del equipo; la IA no sustituye la elección curatorial de esos assets.
 
 ---
 
-*UNKNOW TEAM — Imagina y crea con nosotros*
+*UNKNOW — Imagina y crea con nosotros*
