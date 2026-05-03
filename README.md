@@ -27,14 +27,13 @@ Sitio web para presentar al equipo y a cada integrante. Combina diseño minimali
 
 ## 👥 Integrantes
 
-| Integrante        | GitHub (perfil o repositorio del equipo) |
-|-------------------|------------------------------------------|
-| Carlos Zárate     | [zarateCarlos](https://github.com/zarateCarlos) |
-| Heber Choque      | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
-| Javier Navarro    | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
-| Leandro Melchiori | [tp1_equipo24](https://github.com/zarateCarlos/tp1_equipo24) |
+| Integrante        |
+|-------------------|
+| Carlos Zárate     |
+| Heber Choque      |
+| Javier Navarro    |
+| Leandro Melchiori |
 
-Los enlaces al repositorio del equipo pueden reemplazarse por el perfil individual de cada persona cuando la cátedra lo solicite.
 
 ---
 
@@ -156,7 +155,7 @@ Se priorizó una base visual única (bento y tipografías compartidas) y un solo
 
 ### ✔️ En qué ayudó la IA
 
-- **CSS** — Layout bento, responsive, modo blackout, estilos de cards y rejillas de posters.
+- **CSS** — responsive, modo blackout.
 - **JavaScript** — Lógica de `sessionStorage`, reproductor de música, interceptación de enlaces para view transitions, y **asistencia en el diseño y depuración de animaciones** (coordinación entre clases del `body` y tiempos de `keyframes`).
 - **HTML** — Semántica, atributos `aria-` donde aplica, comentarios de sección, estructura de carpetas por integrante.
 - **Animaciones** — Iteración sobre reglas `@keyframes` y animaciones SVG en portada e integrantes (estrellas, luna, motivos por ficha).
